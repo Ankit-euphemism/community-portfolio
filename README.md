@@ -53,7 +53,7 @@ npm install<br>
 
 Run the development server:<br>
 
-npm start<br>
+npm run dev<br>
 
 This will open the portfolio in your default browser at http://localhost:3000.<br>
 

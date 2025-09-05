@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const portfolioData = {
   name: "Ankit Kumar",
   // NOTE: Replace this with the actual path to your image in your project.
-  imageUrl: "public\\WhatsApp Image 2025-09-05 at 13.52.43_a5c90f5d.jpg",
+  imageUrl: "\\WhatsApp Image 2025-09-05 at 13.52.43_a5c90f5d.jpg",
   contact: {
     email: "ak8622564@gmail.com",
     phone: "+91-9695284445",
@@ -13,7 +13,7 @@ const portfolioData = {
     github: "https://github.com/Ankit-euphemism",
     website: "#",
   },
-  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (C++), mastering Java, building web apps with React & Node.js, and exploring AI with Python. Whether it’s backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
+  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (C++), mastering Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
   education: [
     {
       degree: "Bachelor in Technology (Computer Science and Engineering)",
