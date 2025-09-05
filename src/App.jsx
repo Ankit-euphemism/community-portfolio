@@ -40,7 +40,7 @@ const portfolioData = {
       ],
     },
     {
-      role: "Java Intern",
+      role: "Java Programming Intern",
       company: "Code Alpha",
       location: "Lucknow, UP, India",
       duration: "Mar 2024 - Mar 2024",
@@ -50,7 +50,7 @@ const portfolioData = {
       ],
     },
     {
-      role: "Java Intern",
+      role: "Java Programming Intern",
       company: "CodSoft",
       location: "Lucknow, UP, India",
       duration: "Mar 2024 - Mar 2024",
