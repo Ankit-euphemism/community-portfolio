@@ -3,7 +3,7 @@ This is a personal portfolio website for Ankit Kumar, a passionate and aspiring 
 
 The website is built as a single-page application using React.js and styled with Tailwind CSS.<br>
 
-##Features
+## Features
 Modern & Clean UI: A sleek dark-themed design that is easy on the eyes.<br>
 
 Fully Responsive: Looks great on all devices, from mobile phones to desktop computers.<br>
@@ -28,7 +28,7 @@ Contact: A footer with contact information and social links.<br>
 
 Self-Contained Code: All logic, data, and components are encapsulated within a single file for simplicity.<br>
 
-##Tech Stack
+## Tech Stack
 Frontend: React.js <br>
 
 Styling: Tailwind CSS <br>
@@ -36,12 +36,12 @@ Styling: Tailwind CSS <br>
 ## Getting Started
 To get a local copy up and running, follow these simple steps.
 
-###Prerequisites
+### Prerequisites
 Make sure you have Node.js and npm (or yarn) installed on your machine.<br>
 
 Node.js<br>
 
-###Installation & Setup
+### Installation & Setup
 Clone the repository:<br>
 
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)<br>
