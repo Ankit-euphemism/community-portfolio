@@ -237,24 +237,19 @@ export default function App() {
         {/* --- Experience Section --- */}
         <section id="experience" className="py-20">
           <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
-          <div className="max-w-4xl mx-auto relative">
-             <div className="absolute left-1/2 h-full w-1 bg-gray-700 transform -translate-x-1/2"></div>
+          <div className="max-w-4xl mx-auto">
             {portfolioData.experience.map((exp, index) => (
-              <div key={index} className="mb-12 flex items-center w-full">
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+              <div key={index} className="mb-12 flex justify-center w-full">
+                <div>
                   <div className="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-cyan-500/20 transition-shadow duration-300">
-                    <h3 className="text-xl font-bold text-cyan-400">{exp.role}</h3>
-                    <p className="text-md font-semibold text-gray-300 mb-2">{exp.company}</p>
+                    <h3 className="text-xl font-bold text-cyan-400 text-center">{exp.role}</h3>
+                    <p className="text-md font-semibold text-gray-300 mb-2 text-center">{exp.company}</p>
                     <p className="text-sm text-gray-400 mb-3">{exp.duration} &bull; {exp.location}</p>
-                    <ul className="list-disc list-inside text-gray-400 text-sm">
+                    <ul className="list-disc list-inside text-gray-400 text-sm ">
                       {exp.description.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                   </div>
                 </div>
-                <div className="w-12 h-12 rounded-full bg-cyan-500 absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
-                    <div className="w-4 h-4 rounded-full bg-gray-900"></div>
-                </div>
-                 <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'}`}></div>
               </div>
             ))}
           </div>
