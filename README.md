@@ -76,6 +76,7 @@ Education, Experience, Projects, etc.: Modify the arrays for education, experien
 Once you are ready to deploy your portfolio, you can build the application for production:<br>
 
 npm run build<br>
+npm start<br>
 
 This command creates a build folder with optimized static files. You can deploy the contents of this folder to any static site hosting service like:<br>
 
