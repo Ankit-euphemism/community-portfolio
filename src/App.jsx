@@ -13,7 +13,7 @@ const portfolioData = {
     github: "https://github.com/Ankit-euphemism",
     website: "#",
   },
-  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (C++), mastering Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
+  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (C++), master in Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
   education: [
     {
       degree: "Bachelor in Technology (Computer Science and Engineering)",
@@ -40,7 +40,7 @@ const portfolioData = {
       ],
     },
     {
-      role: "Java Programming Intern",
+      role: "Java Intern",
       company: "Code Alpha",
       location: "Lucknow, UP, India",
       duration: "Mar 2024 - Mar 2024",
@@ -50,7 +50,7 @@ const portfolioData = {
       ],
     },
     {
-      role: "Java Programming Intern",
+      role: "Java Intern",
       company: "CodSoft",
       location: "Lucknow, UP, India",
       duration: "Mar 2024 - Mar 2024",
