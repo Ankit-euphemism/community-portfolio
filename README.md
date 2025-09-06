@@ -55,7 +55,7 @@ Run the development server:<br>
 
 npm run dev<br>
 
-This will open the portfolio in your default browser at http://localhost:3000.<br>
+This will open the portfolio in your default browser at http://localhost:5173.<br>
 
 ## How to Customize
 All the personal data for the portfolio is stored in the portfolioData object within the portfolio.jsx file. You can easily customize it to reflect your own information.<br>

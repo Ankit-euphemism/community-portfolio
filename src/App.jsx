@@ -94,19 +94,19 @@ const portfolioData = {
     {
       title: "Sign Language Translator",
       tech: "Python, Tensorflow-keras, Media-pipe , OpenCV",
-      description: "A Python based translator helps to understand the hands gestures ",
+      description: "A Python based Sign translator helps to understand the hands gestures ",
       link: "https://github.com/Ankit-euphemism/sign-language-translator.git",
     },
     {
-      title: "Retrival AI Model",
+      title: "Retrieval AI Model",
       tech: "Python, Hugging Face, Pinecone DB, FastAPI",
-      description: "LLM-Based Documents Query Retrival to generate document summary. ",
+      description: "LLM-Based Documents Query Retrieval to generate JSON summary of the documents ",
       link: "https://github.com/Ankit-euphemism/Retrival_model.git",
     },
     {
       title: "SPSS-stream",
       tech: "Data Science,IBM SPSS Modeler",
-      description: "RFM Analysis on customer's data",
+      description: "Data Science Project used to perform RFM Analysis on customer's data",
       link: "https://github.com/DS-techies/SPSS-stream.git",
     },
   ],
@@ -116,7 +116,7 @@ const portfolioData = {
   ],
   skills: {
     Languages: ["Java", "Python", "C/C++", "SQL (MySQL, Postgres)", "JavaScript", "HTML/CSS", "PHP", "MongoDB"],
-    Frameworks: ["React", "Bootstrap", "Node.js", "Express.js", "Django", "Flask", "Angular", "RESTful API"],
+    Frameworks: ["React", "Bootstrap", "Node.js", "Express.js", "Django", "Flask", "Angular", "RESTful API", "Fast API"],
     DeveloperTools: ["Git", "Github", "VS Code", "Visual Studio", "PyCharm", "IntelliJ", "Cursor AI", "Firebase"],
     Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios"],
     Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
