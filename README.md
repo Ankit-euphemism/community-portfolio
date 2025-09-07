@@ -43,18 +43,18 @@ Node.js<br>
 
 ### Installation & Setup
 Clone the repository:<br>
-
+```bash
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)<br>
-cd your-repo-name<br>
-
+cd your-repo-name
+```
 Install NPM packages:<br>
-
-npm install<br>
-
+```bash
+npm install
+```
 Run the development server:<br>
-
-npm run dev<br>
-
+```bash
+npm run dev
+```
 This will open the portfolio in your default browser at http://localhost:5173.<br>
 
 ## How to Customize
@@ -74,10 +74,10 @@ Education, Experience, Projects, etc.: Modify the arrays for education, experien
 
 ## Deployment
 Once you are ready to deploy your portfolio, you can build the application for production:<br>
-
-npm run build<br>
-npm start<br>
-
+```bash
+npm run build
+npm start
+```
 This command creates a build folder with optimized static files. You can deploy the contents of this folder to any static site hosting service like:<br>
 
 Vercel<br>
