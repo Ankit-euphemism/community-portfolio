@@ -120,7 +120,7 @@ const portfolioData = {
     DeveloperTools: ["Git", "Github", "VS Code", "Visual Studio", "PyCharm", "IntelliJ", "Cursor AI", "Firebase"],
     Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios"],
     Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
-    SoftSkills: ["Problem solving", "Teamwork", "Quick learning"]
+    SoftSkills: ["Problem solving", "Teamwork", "Quick learning", "Communication"]
   }
 };
 
