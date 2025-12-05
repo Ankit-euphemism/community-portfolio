@@ -116,7 +116,7 @@ const portfolioData = {
   ],
   skills: {
     Languages: ["Java", "Python", "C/C++", "SQL (MySQL, Postgres)", "JavaScript", "HTML/CSS", "PHP", "MongoDB"],
-    Frameworks: ["React", "Bootstrap", "Node.js", "Express.js", "Django", "Flask", "Angular", "RESTful API", "Fast API"],
+    Frameworks: ["React", "Bootstrap", "Node.js", "Express.js", "Django", "Flask", "Angular.js", "RESTful API", "Fast API"],
     DeveloperTools: ["Git", "Github", "VS Code", "Visual Studio", "PyCharm", "IntelliJ", "Cursor AI", "Firebase"],
     Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios"],
     Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
