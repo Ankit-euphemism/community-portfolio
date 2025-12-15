@@ -13,7 +13,7 @@ const portfolioData = {
     github: "https://github.com/Ankit-euphemism",
     website: "#",
   },
-  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (C++), master in Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
+  about: "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (Java), master in Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
   education: [
     {
       degree: "Bachelor in Technology (Computer Science and Engineering)",
@@ -211,7 +211,7 @@ export default function App() {
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Hi, I'm <span className="text-cyan-400">Ankit Kumar</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-8"> BTech CSE Student | MERN Stack Developer | DSA (C++) & AI Enthusiast | Internship-Ready Full-Stack Learner </p>
+            <p className="text-xl md:text-2xl text-gray-400 mb-8"> BTech CSE Student | MERN Stack Developer | DSA (Java) & AI Enthusiast | Internship-Ready Full-Stack Learner </p>
             <div className="flex justify-center md:justify-start space-x-6">
               <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"><LinkedinIcon className="h-8 w-8"/></a>
               <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"><GithubIcon className="h-8 w-8"/></a>
