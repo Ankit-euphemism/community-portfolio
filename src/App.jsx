@@ -33,7 +33,7 @@ const portfolioData = {
       role: "Software Engineer Intern",
       company: "Yuga Yatra Retail OPC Pvt Ltd.",
       location: "Lucknow, UP, India",
-      duration: "July 2025 - Present",
+      duration: "July, 2025 - September, 2025",
       description: [
         "Developing websites and apps using Cursor AI, Firebase Studio, and other AI Technologies.",
         "Managing seller portals on platforms like Amazon and Flipkart.",
@@ -43,7 +43,7 @@ const portfolioData = {
       role: "Java Programming Intern",
       company: "Code Alpha",
       location: "Lucknow, UP, India",
-      duration: "Mar 2024 - Mar 2024",
+      duration: "Mar, 2024 - Mar, 2024",
       description: [
         "Completed tasks using basic and core Java concepts.",
         "Developed a desktop application with Swing and MySQL for data management with an interactive GUI.",
@@ -53,7 +53,7 @@ const portfolioData = {
       role: "Java Programming Intern",
       company: "CodSoft",
       location: "Lucknow, UP, India",
-      duration: "Mar 2024 - Mar 2024",
+      duration: "Mar, 2024 - Mar, 2024",
       description: [
         "Finished all assigned tasks within the given timeframe using Java.",
         "Developed a number guessing game using Java's random module and methods.",
