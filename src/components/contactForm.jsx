@@ -18,7 +18,7 @@ function ContactForm() {
       });
 
       const data = await response.json();
-      console.log(data);
+      
       if (data.success) {
         setResult("Thanks! Your message has been sent successfully.");
         event.target.reset();
