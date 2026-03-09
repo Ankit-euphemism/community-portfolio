@@ -68,55 +68,55 @@ const portfolioData = {
       tech: "HTML/CSS, JavaScript, MySQL, Node.js, Express.js",
       description:
         "A web app for creating, reading, updating, and deleting tasks.",
-      link: "https://github.com/Ankit-euphemism/Simple-Task-Manager.git",
+      link: "https://github.com/Ankit-euphemism/Simple-Task-Manager",
     },
     {
       title: "Weather App",
       tech: "HTML, CSS, JavaScript, OpenWeatherMap API",
       description: "Provides real-time weather information for any city.",
-      link: "https://github.com/Ankit-euphemism/weather_app.git",
+      link: "https://github.com/Ankit-euphemism/weather_app",
     },
     {
       title: "Spam Email Detection",
       tech: "Python, Django, BERT, Torch",
       description:
         "A web application that detects spam emails by analyzing their content.",
-      link: "https://github.com/DS-techies/Spam_email_detection.git",
+      link: "https://github.com/Ankit-euphemism/Spam_email_detection",
     },
     {
       title: "Student Attendance System",
       tech: "Python, Django, PostgreSQL",
       description:
         "A web application for viewing, tracking, and marking student attendance.",
-      link: "https://github.com/DS-techies/Student-Management-System.git",
+      link: "https://github.com/Ankit-euphemism/Student-Management-System",
     },
     {
       title: "Simple GPU Finder",
       tech: "Python, Flask, Regex, FastAPI",
       description:
         "A web app to search for graphics cards by title and price range.",
-      link: "https://github.com/Ankit-euphemism/Simple-GPU-Finder.git",
+      link: "https://github.com/Ankit-euphemism/Simple-GPU-Finder",
     },
     {
       title: "Sign Language Translator",
       tech: "Python, Tensorflow-keras, Media-pipe , OpenCV",
       description:
         "A Python based Sign translator helps to understand the hands gestures ",
-      link: "https://github.com/Ankit-euphemism/sign-language-translator.git",
+      link: "https://github.com/Ankit-euphemism/sign-language-translator",
     },
-    {
-      title: "Retrieval AI Model",
-      tech: "Python, Hugging Face, Pinecone DB, FastAPI",
-      description:
-        "LLM-Based Documents Query Retrieval to generate JSON summary of the documents ",
-      link: "https://github.com/Ankit-euphemism/Retrival_model.git",
-    },
+    // {
+    //   title: "Retrieval AI Model",
+    //   tech: "Python, Hugging Face, Pinecone DB, FastAPI",
+    //   description:
+    //     "LLM-Based Documents Query Retrieval to generate JSON summary of the documents ",
+    //   link: "https://github.com/Ankit-euphemism/Retrival_model.git",
+    // },
     {
       title: "SPSS-stream",
       tech: "Data Science,IBM SPSS Modeler",
       description:
         "Data Science Project used to perform RFM Analysis on customer's data",
-      link: "https://github.com/DS-techies/SPSS-stream.git",
+      link: "https://github.com/DS-techies/SPSS-stream",
     },
   ],
   certificates: [
@@ -128,6 +128,9 @@ const portfolioData = {
     "CodSoft",
     "Web Designing - NILET",
     "AWS APAC Job Simulation",
+    " 5-Day AI Agents Course by Kaggle and Google",
+    " Deloitte data analysis job simulation",
+    "Software Engineer Intern at Yuga Yatra"
   ],
   skills: {
     Languages: [
@@ -139,6 +142,7 @@ const portfolioData = {
       "HTML/CSS",
       "PHP",
       "MongoDB",
+      "Flutter"
     ],
     Frameworks: [
       "React",
@@ -161,7 +165,7 @@ const portfolioData = {
       "Cursor AI",
       "Firebase",
     ],
-    Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios"],
+    Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios", "Multer"],
     Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
     SoftSkills: [
       "Problem solving",
