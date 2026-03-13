@@ -5,7 +5,7 @@ import ContactForm from "./components/contactForm";
 const portfolioData = {
   name: "Ankit Kumar",
   // NOTE: Replace this with the actual path to your image in your project.
-  imageUrl: "\\WhatsApp Image 2025-09-05 at 13.52.43_a5c90f5d.jpg",
+  imageUrl: "\\ank_pic.jpg",
   contact: {
     email: "ak8622564@gmail.com",
     phone: "+91-9695284445",
@@ -130,7 +130,7 @@ const portfolioData = {
     "AWS APAC Job Simulation",
     " 5-Day AI Agents Course by Kaggle and Google",
     " Deloitte data analysis job simulation",
-    "Software Engineer Intern at Yuga Yatra"
+    "Software Engineer Intern at Yuga Yatra",
   ],
   skills: {
     Languages: [
@@ -142,7 +142,7 @@ const portfolioData = {
       "HTML/CSS",
       "PHP",
       "MongoDB",
-      "Flutter"
+      "Flutter",
     ],
     Frameworks: [
       "React",
@@ -153,7 +153,7 @@ const portfolioData = {
       "Flask",
       "Angular.js",
       "RESTful API",
-      "Fast API",
+      "FastAPI",
     ],
     DeveloperTools: [
       "Git",
@@ -164,8 +164,16 @@ const portfolioData = {
       "IntelliJ",
       "Cursor AI",
       "Firebase",
+      "AWS",
     ],
-    Libraries: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Axios", "Multer"],
+    Libraries: [
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Matplotlib",
+      "Axios",
+      "Multer",
+    ],
     Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
     SoftSkills: [
       "Problem solving",
