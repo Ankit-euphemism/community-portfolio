@@ -37,8 +37,8 @@ const portfolioData = {
       location: "Lucknow, UP, India",
       duration: "July, 2025 - September, 2025",
       description: [
-        "Developing websites and apps using Cursor AI, Firebase Studio, and other AI Technologies.",
-        "Managing seller portals on platforms like Amazon and Flipkart.",
+        "Developed web applications using modern AI-assisted tools (Cursor AI, Firebase Studio) to improve development speed and productivity",
+        "Built and optimized seller-side workflows for e-commerce platforms (Amazon, Flipkart)",
       ],
     },
     {
@@ -47,8 +47,8 @@ const portfolioData = {
       location: "Lucknow, UP, India",
       duration: "Mar, 2024 - Mar, 2024",
       description: [
-        "Completed tasks using basic and core Java concepts.",
-        "Developed a desktop application with Swing and MySQL for data management with an interactive GUI.",
+        "Built a desktop-based application using Java Swing with MySQL integration for data storage and management",
+        "Developed interactive GUI features for enhanced usability and user experience",
       ],
     },
     {
@@ -57,51 +57,52 @@ const portfolioData = {
       location: "Lucknow, UP, India",
       duration: "Mar, 2024 - Mar, 2024",
       description: [
-        "Finished all assigned tasks within the given timeframe using Java.",
-        "Developed a number guessing game using Java's random module and methods.",
+        "Developed Java-based applications using core programming concepts and object-oriented principles",
+        "Built a game using randomization logic and modular methods",
       ],
     },
   ],
   projects: [
     {
       title: "Simple Task Manager",
-      tech: "HTML/CSS, JavaScript, MySQL, Node.js, Express.js",
+      tech: "MERN STACK, MySQL",
       description:
-        "A web app for creating, reading, updating, and deleting tasks.",
+        " Built a full-stack task management application using React, Node.js, Express, and MySQL",
       link: "https://github.com/Ankit-euphemism/Simple-Task-Manager",
     },
     {
       title: "Weather App",
-      tech: "HTML, CSS, JavaScript, OpenWeatherMap API",
-      description: "Provides real-time weather information for any city.",
+      tech: "React.js, API Integration",
+      description:
+        "Built a responsive React application fetching real-time weather data using OpenWeather API",
       link: "https://github.com/Ankit-euphemism/weather_app",
     },
     {
       title: "Spam Email Detection",
-      tech: "Python, Django, BERT, Torch",
+      tech: "Django, BERT, Torch",
       description:
-        "A web application that detects spam emails by analyzing their content.",
+        "Developed an AI-powered web application using BERT and PyTorch for email classification",
       link: "https://github.com/Ankit-euphemism/Spam_email_detection",
     },
     {
       title: "Student Attendance System",
-      tech: "Python, Django, PostgreSQL",
+      tech: "Django, PostgreSQL",
       description:
-        "A web application for viewing, tracking, and marking student attendance.",
+        "Designed a web-based attendance system for marking attendance and generating reports.",
       link: "https://github.com/Ankit-euphemism/Student-Management-System",
     },
     {
       title: "Simple GPU Finder",
-      tech: "Python, Flask, Regex, FastAPI",
+      tech: "Flask, Regex",
       description:
-        "A web app to search for graphics cards by title and price range.",
+        " Developed a web application to filter and search GPUs based on title and price range",
       link: "https://github.com/Ankit-euphemism/Simple-GPU-Finder",
     },
     {
       title: "Sign Language Translator",
-      tech: "Python, Tensorflow-keras, Media-pipe , OpenCV",
+      tech: "Tensorflow-keras, Media-pipe , OpenCV",
       description:
-        "A Python based Sign translator helps to understand the hands gestures ",
+        "Built a real-time gesture recognition system using TensorFlow, MediaPipe, and OpenCV",
       link: "https://github.com/Ankit-euphemism/sign-language-translator",
     },
     // {
@@ -115,7 +116,7 @@ const portfolioData = {
       title: "SPSS-stream",
       tech: "Data Science,IBM SPSS Modeler",
       description:
-        "Data Science Project used to perform RFM Analysis on customer's data",
+        "Developed a spss model to perform RFM Analysis on customer's data",
       link: "https://github.com/DS-techies/SPSS-stream",
     },
   ],
@@ -133,38 +134,30 @@ const portfolioData = {
     "Software Engineer Intern at Yuga Yatra",
   ],
   skills: {
-    Languages: [
-      "Java",
-      "Python",
-      "C/C++",
-      "SQL (MySQL, Postgres)",
-      "JavaScript",
-      "HTML/CSS",
-      "PHP",
-      "MongoDB",
-      "Flutter",
-    ],
+    Languages: ["Java", "Python", "C/C++", "JavaScript", "SQL", "NOSQL", "PHP"],
     Frameworks: [
-      "React",
-      "Bootstrap",
+      "React.js",
       "Node.js",
       "Express.js",
       "Django",
       "Flask",
-      "Angular.js",
-      "RESTful API",
-      "FastAPI",
+      "REST APIs",
+    ],
+    Databases: [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "SQLite",
+      "Firebase Realtime Database",
     ],
     DeveloperTools: [
       "Git",
-      "Github",
-      "VS Code",
-      "Visual Studio",
-      "PyCharm",
-      "IntelliJ",
-      "Cursor AI",
+      "GitHub",
       "Firebase",
       "AWS",
+      "VS Code",
+      "IntelliJ",
+      "PyCharm",
     ],
     Libraries: [
       "Pandas",
@@ -174,13 +167,13 @@ const portfolioData = {
       "Axios",
       "Multer",
     ],
-    Others: ["Testing", "Debugging", "Documentation", "Code Maintenance"],
-    SoftSkills: [
-      "Problem solving",
-      "Teamwork",
-      "Quick learning",
-      "Communication",
+    Others: [
+      "Problem Solving",
+      "Debugging and Testing",
+      "API Development",
+      "Database Design",
     ],
+    SoftSkills: ["Teamwork", "Quick learning", "Communication"],
   },
 };
 
@@ -421,7 +414,7 @@ export default function App() {
         {/* --- Experience Section --- */}
         <section id="experience" className="py-20">
           <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto align-middle">
             {portfolioData.experience.map((exp, index) => (
               <div key={index} className="mb-12 flex justify-center w-full">
                 <div>
