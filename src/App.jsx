@@ -64,6 +64,13 @@ const portfolioData = {
   ],
   projects: [
     {
+      title: "SchoolDekho",
+      tech: "MERN STACK, Cloudinary, Google Maps API",
+      description:
+        " Developed a full-stack education platform to help students explore schools, courses, and academic information in atructured way",
+      link: "https://github.com/Ankit-euphemism/SchoolDekho",
+    },
+    {
       title: "Simple Task Manager",
       tech: "MERN STACK, MySQL",
       description:
@@ -537,7 +544,7 @@ export default function App() {
             {portfolioData.contact.email}
           </a>{" "}
           <br />
-          <a className="text-xl text-cyan-400 hover:underline mb-8 inline-block">
+          <a href={`tel:${portfolioData.contact.phone}`} className="text-xl text-cyan-400 hover:underline mb-8 inline-block">
             {portfolioData.contact.phone}
           </a>
           <div className="flex justify-center space-x-6 mb-8">
