@@ -71,14 +71,14 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/SchoolDekho",
     },
     {
-      title: "Simple Task Manager",
+      title: "taskstag",
       tech: "MERN STACK, MySQL",
       description:
         " Built a full-stack task management application using React, Node.js, Express, and MySQL",
       link: "https://github.com/Ankit-euphemism/Simple-Task-Manager",
     },
     {
-      title: "Weather App",
+      title: "Gale Gallery",
       tech: "React.js, API Integration",
       description:
         "Built a responsive React application fetching real-time weather data using OpenWeather API",
@@ -92,14 +92,14 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/Spam_email_detection",
     },
     {
-      title: "Student Attendance System",
+      title: "CheckInly",
       tech: "Django, PostgreSQL",
       description:
         "Designed a web-based attendance system for marking attendance and generating reports.",
       link: "https://github.com/Ankit-euphemism/Student-Management-System",
     },
     {
-      title: "Simple GPU Finder",
+      title: "VidFind",
       tech: "Flask, Regex",
       description:
         " Developed a web application to filter and search GPUs based on title and price range",
@@ -126,6 +126,13 @@ const portfolioData = {
         "Developed a spss model to perform RFM Analysis on customer's data",
       link: "https://github.com/DS-techies/SPSS-stream",
     },
+    {
+      title: "Plinth- Campus ChatRoom",
+      tech: "PHP, MySQL, HTML, CSS, JavaScript, jQuery",
+      description:
+        "Plinth Chatroom is a campus chat application. It uses a pull (polling) model to keep conversations and presence updated in near real time.",
+      link: "https://github.com/Ankit-euphemism/Plinth",
+    }
   ],
   certificates: [
     "Data Concepts",
@@ -155,7 +162,6 @@ const portfolioData = {
       "PostgreSQL",
       "MongoDB",
       "SQLite",
-      "Firebase Realtime Database",
     ],
     DeveloperTools: [
       "Git",
