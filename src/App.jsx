@@ -280,7 +280,7 @@ const XIcon = ({ className }) => (
 // --- Main App Component ---
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
     { href: "#home", label: "Home" },
@@ -310,18 +310,18 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen">
+    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen overflow-x-hidden scroll-smooth" style={{scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased', WebkitTouchCallout: 'none'}}>
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
 
       {/* --- Header --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl">
-        <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-3 xs:py-4 sm:py-5 flex justify-between items-center">
-          <a href="#home" className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl safe-top" style={{paddingTop: 'max(0px, env(safe-area-inset-top))'}}>
+        <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 py-2.5 xs:py-3 sm:py-4 lg:py-5 flex justify-between items-center">
+          <a href="#home" className="text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap">
             ✨ Ankit Kumar
           </a>
           <nav className="hidden lg:flex gap-0.5 items-center">
@@ -329,7 +329,7 @@ export default function App() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap ${
+                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap active:scale-95 ${
                   activeSection === link.href.substring(1)
                     ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
                     : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
@@ -339,7 +339,7 @@ export default function App() {
               </a>
             ))}
           </nav>
-          <button className="lg:hidden p-2 hover:bg-cyan-500/10 rounded-lg transition-colors" onClick={() => setIsMenuOpen(true)}>
+          <button className="lg:hidden p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center" onClick={() => setIsMenuOpen(true)} aria-label="Open menu">
             <MenuIcon className="h-5 w-5 xs:h-6 xs:w-6 text-gray-300" />
           </button>
         </div>
@@ -347,20 +347,21 @@ export default function App() {
 
       {/* --- Mobile Menu --- */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden">
+        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden" style={{paddingTop: 'max(0px, env(safe-area-inset-top))', paddingBottom: 'max(0px, env(safe-area-inset-bottom))'}}>
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-4 xs:top-6 right-3 xs:right-6 p-2 hover:bg-cyan-500/10 rounded-lg transition-colors"
+            className="absolute top-3 xs:top-4 right-2 xs:right-3 p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center"
+            aria-label="Close menu"
           >
-            <XIcon className="h-6 w-6 xs:h-8 xs:w-8 text-gray-300" />
+            <XIcon className="h-6 w-6 xs:h-7 xs:w-7 text-gray-300" />
           </button>
-          <nav className="flex flex-col gap-6 xs:gap-8 text-center">
+          <nav className="flex flex-col gap-4 xs:gap-6 sm:gap-8 text-center">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-lg xs:text-xl sm:text-2xl font-semibold text-gray-300 hover:text-cyan-400 transition-colors duration-300 active:text-cyan-300"
+                className="text-base xs:text-lg sm:text-xl font-semibold text-gray-300 hover:text-cyan-400 transition-colors duration-300 active:text-cyan-300 active:scale-95 py-2 px-4 rounded-lg hover:bg-cyan-500/10"
               >
                 {link.label}
               </a>
@@ -369,34 +370,34 @@ export default function App() {
         </div>
       )}
 
-      <main className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 2xl:px-10 pt-16 xs:pt-20 sm:pt-24 lg:pt-28">
+      <main className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 2xl:px-10 pt-14 xs:pt-16 sm:pt-20 lg:pt-24 2xl:pt-28" style={{paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))'}}>
         {/* --- Hero Section --- */}
         <section
           id="home"
-          className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center text-center lg:text-left py-8 xs:py-12 sm:py-16 lg:py-20 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 2xl:gap-16"
+          className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center text-center lg:text-left py-6 xs:py-8 sm:py-12 lg:py-16 2xl:py-20 gap-4 xs:gap-6 sm:gap-8 lg:gap-12 2xl:gap-16"
         >
-          <div className="w-full lg:w-1/2 space-y-4 xs:space-y-5 sm:space-y-6 lg:space-y-8 relative z-10">
-            <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-              <p className="text-cyan-400 font-semibold text-xs xs:text-sm sm:text-base lg:text-lg tracking-widest uppercase">
+          <div className="w-full lg:w-1/2 space-y-3 xs:space-y-4 sm:space-y-5 lg:space-y-6 2xl:space-y-8 relative z-10">
+            <div className="space-y-1.5 xs:space-y-2 sm:space-y-3 lg:space-y-4">
+              <p className="text-cyan-400 font-semibold text-2xs xs:text-xs sm:text-sm lg:text-base tracking-widest uppercase">
                 Welcome to my portfolio
               </p>
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold leading-tight">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight break-words">
                 Hi, I'm <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Ankit</span>
               </h1>
             </div>
-            <p className="text-sm xs:text-base sm:text-lg lg:text-xl 2xl:text-2xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              {" "}
+            <p className="text-xs xs:text-sm sm:text-base lg:text-lg 2xl:text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
               BTech CSE Student | Software Engineer | Full-Stack Developer | DSA (Java) Enthusiast | AI Explorer
             </p>
-            <p className="text-xs xs:text-sm sm:text-base text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className="text-2xs xs:text-xs sm:text-sm text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0">
               Building scalable web applications and solving real-world problems with modern tech. Currently exploring full-stack development, AI and machine learning.
             </p>
-            <div className="flex justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-4 xs:pt-5">
+            <div className="flex justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-3 sm:pt-4">
               <a
                 href={portfolioData.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
+                className="p-2.5 xs:p-3 sm:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+                title="LinkedIn"
               >
                 <LinkedinIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
@@ -404,34 +405,36 @@ export default function App() {
                 href={portfolioData.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
+                className="p-2.5 xs:p-3 sm:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+                title="GitHub"
               >
                 <GithubIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
               <a
                 href={`mailto:${portfolioData.contact.email}`}
-                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
+                className="p-2.5 xs:p-3 sm:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+                title="Email"
               >
                 <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
-            <div className="flex flex-col xs:flex-row justify-center lg:justify-start gap-3 xs:gap-4 pt-4 xs:pt-6">
+            <div className="flex flex-col xs:flex-row justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-4">
               <a
                 href="#contact-form"
-                className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold py-2 xs:py-2.5 sm:py-3 px-5 xs:px-6 sm:px-8 text-sm xs:text-base rounded-lg xs:rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 active:scale-95"
+                className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 active:scale-95 min-h-10 flex items-center justify-center"
               >
                 Get In Touch
               </a>
               <a
                 href="#projects"
-                className="inline-block border-2 border-cyan-400/50 text-cyan-300 font-semibold py-2 xs:py-2.5 sm:py-3 px-5 xs:px-6 sm:px-8 text-sm xs:text-base rounded-lg xs:rounded-xl hover:border-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 active:bg-cyan-500/20"
+                className="inline-block border-2 border-cyan-400/50 text-cyan-300 font-semibold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:border-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 active:bg-cyan-500/20 min-h-10 flex items-center justify-center"
               >
                 View My Work
               </a>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 flex justify-center relative z-10 mt-6 xs:mt-8 sm:mt-10 lg:mt-0">
-            <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 3xl:w-[28rem] 3xl:h-[28rem]">
+          <div className="w-full lg:w-1/2 flex justify-center relative z-10 mt-4 xs:mt-6 sm:mt-8 lg:mt-0">
+            <div className="relative w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 2xl:w-80 2xl:h-80">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" />
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-blue-400 shadow-2xl shadow-cyan-500/30 relative">
                 <img
@@ -445,48 +448,48 @@ export default function App() {
         </section>
 
         {/* --- About Section --- */}
-        <section id="about" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
-          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+        <section id="about" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4 lg:space-y-5 text-center mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">About Me</span>
             </h2>
-            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+            <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto px-2 xs:px-3 sm:px-0">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl sm:rounded-2xl blur opacity-75 group-hover:opacity-100 transition-all duration-300" />
-              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 p-6 xs:p-8 sm:p-10 lg:p-12 2xl:p-14 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-2xl">
-                <p className="text-sm xs:text-base sm:text-lg lg:text-xl 2xl:text-2xl text-gray-200 leading-relaxed">{portfolioData.about}</p>
+              <div className="absolute -inset-0.5 xs:-inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg xs:rounded-xl sm:rounded-2xl blur opacity-75 group-hover:opacity-100 transition-all duration-300" />
+              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 p-4 xs:p-5 sm:p-7 lg:p-8 2xl:p-10 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-2xl">
+                <p className="text-xs xs:text-sm sm:text-base lg:text-lg 2xl:text-xl text-gray-200 leading-relaxed">{portfolioData.about}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* --- Experience Section --- */}
-        <section id="experience" className="py-24 relative z-10">
-          <div className="space-y-4 text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold">
+        <section id="experience" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Experience</span>
             </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+            <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4 xs:space-y-5 sm:space-y-6 px-2 xs:px-3 sm:px-0">
             {portfolioData.experience.map((exp, index) => (
               <div key={index} className="group">
                 <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-8 rounded-xl shadow-lg group-hover:shadow-cyan-500/30 transition-all duration-300 group-hover:border-cyan-500/40 group-hover:translate-x-2">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-2">
+                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-4 xs:p-5 sm:p-6 lg:p-7 rounded-lg xs:rounded-xl shadow-lg group-hover:shadow-cyan-500/30 transition-all duration-300 group-hover:border-cyan-500/40 group-hover:translate-x-2">
+                  <div className="flex items-start justify-between gap-3 xs:gap-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg xs:text-xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-1 xs:mb-2 break-words">
                         {exp.role}
                       </h3>
-                      <p className="text-lg font-semibold text-gray-200 mb-1">{exp.company}</p>
-                      <p className="text-sm text-cyan-400/70 mb-4 font-medium">{exp.duration} • {exp.location}</p>
-                      <ul className="space-y-2">
+                      <p className="text-base xs:text-lg font-semibold text-gray-200 mb-0.5 xs:mb-1">{exp.company}</p>
+                      <p className="text-xs xs:text-sm text-cyan-400/70 mb-2 xs:mb-3 font-medium break-words">{exp.duration} • {exp.location}</p>
+                      <ul className="space-y-1 xs:space-y-2">
                         {exp.description.map((item, i) => (
-                          <li key={i} className="text-gray-300 flex items-start gap-3">
-                            <span className="text-cyan-400 font-bold mt-1">▸</span>
-                            <span>{item}</span>
+                          <li key={i} className="text-gray-300 flex items-start gap-2 xs:gap-3 text-2xs xs:text-xs sm:text-sm">
+                            <span className="text-cyan-400 font-bold mt-0.5 flex-shrink-0">▸</span>
+                            <span className="break-words">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -499,33 +502,33 @@ export default function App() {
         </section>
 
         {/* --- Projects Section --- */}
-        <section id="projects" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
-          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+        <section id="projects" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Featured Projects</span>
             </h2>
-            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+            <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 lg:gap-6 px-2 xs:px-3 sm:px-0">
             {portfolioData.projects.map((project, index) => (
               <div key={index} className="group h-full">
-                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-5 xs:p-6 sm:p-7 rounded-lg xs:rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-2 flex flex-col h-full">
+                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-3 xs:p-4 sm:p-5 rounded-lg xs:rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-2 flex flex-col h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-lg xs:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative">
-                    <h3 className="text-lg xs:text-xl sm:text-base lg:text-lg font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-2 xs:mb-3">
+                    <h3 className="text-base xs:text-lg sm:text-base lg:text-lg font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-2 xs:mb-2.5 break-words">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 mb-3 xs:mb-4 text-xs xs:text-sm sm:text-xs lg:text-sm leading-relaxed flex-grow">
+                    <p className="text-gray-300 mb-2 xs:mb-3 text-2xs xs:text-xs sm:text-xs lg:text-sm leading-relaxed flex-grow">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-1.5 xs:gap-2 mb-4 xs:mb-5">
+                    <div className="flex flex-wrap gap-1 xs:gap-1.5 mb-3 xs:mb-3.5">
                       {project.tech.split(", ").slice(0, 3).map((tech, i) => (
-                        <span key={i} className="text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-3 py-1 rounded-full border border-cyan-500/30 font-medium">
+                        <span key={i} className="text-2xs xs:text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-2.5 py-0.5 xs:py-1 rounded-full border border-cyan-500/30 font-medium whitespace-nowrap">
                           {tech}
                         </span>
                       ))}
                       {project.tech.split(", ").length > 3 && (
-                        <span className="text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-3 py-1 rounded-full border border-cyan-500/30 font-medium">
+                        <span className="text-2xs xs:text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-2.5 py-0.5 xs:py-1 rounded-full border border-cyan-500/30 font-medium">
                           +{project.tech.split(", ").length - 3}
                         </span>
                       )}
@@ -534,7 +537,7 @@ export default function App() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-cyan-500/80 to-blue-500/80 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold py-2 xs:py-2.5 px-3 xs:px-4 rounded-lg text-xs xs:text-sm transition-all duration-300 gap-2 mt-auto active:scale-95"
+                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-cyan-500/80 to-blue-500/80 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold py-1.5 xs:py-2 px-2 xs:px-3 rounded-lg text-2xs xs:text-xs transition-all duration-300 gap-1.5 mt-auto active:scale-95 min-h-9 xs:min-h-10"
                     >
                       View →
                     </a>
@@ -546,14 +549,14 @@ export default function App() {
         </section>
 
         {/* --- Skills Section --- */}
-        <section id="skills" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
-          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+        <section id="skills" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Technical Skills</span>
             </h2>
-            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+            <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
-          <div className="max-w-5xl mx-auto space-y-8 xs:space-y-10 sm:space-y-12">
+          <div className="max-w-5xl mx-auto space-y-5 xs:space-y-6 sm:space-y-8 px-2 xs:px-3 sm:px-0">
             {Object.entries(portfolioData.skills).map(
               ([category, skillsList], catIndex) => {
                 const categoryGradients = [
@@ -568,14 +571,14 @@ export default function App() {
                 
                 return (
                   <div key={category}>
-                    <h3 className={`text-xl xs:text-2xl sm:text-3xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-4 xs:mb-5`}>
+                    <h3 className={`text-lg xs:text-xl sm:text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3 xs:mb-4`}>
                       {category.replace(/([A-Z])/g, " $1").trim()}
                     </h3>
-                    <div className="flex flex-wrap gap-2 xs:gap-3 sm:gap-4">
+                    <div className="flex flex-wrap gap-1.5 xs:gap-2 sm:gap-3">
                       {skillsList.map((skill, index) => (
                         <span
                           key={index}
-                          className={`bg-gradient-to-r ${gradient} bg-opacity-10 text-gray-200 border border-gray-600/50 hover:border-cyan-400/50 py-1.5 xs:py-2 px-3 xs:px-4 rounded-full text-xs xs:text-sm font-medium shadow-md transition-all duration-300 hover:bg-opacity-20 hover:text-cyan-300 active:scale-95`}
+                          className={`bg-gradient-to-r ${gradient} bg-opacity-10 text-gray-200 border border-gray-600/50 hover:border-cyan-400/50 py-1 xs:py-1.5 px-2.5 xs:px-3 sm:px-4 rounded-full text-2xs xs:text-xs sm:text-sm font-medium shadow-md transition-all duration-300 hover:bg-opacity-20 hover:text-cyan-300 active:scale-95 whitespace-nowrap"`}
                         >
                           {skill}
                         </span>
@@ -589,22 +592,22 @@ export default function App() {
         </section>
 
         {/* --- Certificates Section --- */}
-        <section id="certificates" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
-          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+        <section id="certificates" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Certifications & Achievements</span>
             </h2>
-            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+            <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 lg:gap-6">
+          <div className="max-w-5xl mx-auto px-2 xs:px-3 sm:px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 lg:gap-5">
               {portfolioData.certificates.map((cert, index) => (
                 <div
                   key={index}
-                  className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 hover:border-cyan-500/40 px-4 xs:px-5 sm:px-6 py-3 xs:py-4 rounded-lg xs:rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:translate-y-1"
+                  className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 hover:border-cyan-500/40 px-3 xs:px-4 sm:px-5 py-2.5 xs:py-3 sm:py-3.5 rounded-lg xs:rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:translate-y-1 min-h-12 xs:min-h-14 flex items-center"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-lg xs:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <p className="text-gray-200 font-semibold text-xs xs:text-sm sm:text-base relative text-center">
+                  <p className="text-gray-200 font-semibold text-2xs xs:text-xs sm:text-sm relative text-center w-full break-words">
                     ✓ {cert}
                   </p>
                 </div>
@@ -614,44 +617,45 @@ export default function App() {
         </section>
 
         {/* --- Contact Form Section --- */}
-        <section id="contact-form" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
-          <div className="max-w-3xl mx-auto">
+        <section id="contact-form" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+          <div className="max-w-3xl mx-auto px-2 xs:px-3 sm:px-0">
             <ContactForm />
           </div>
         </section>
      </main>
 
       {/* --- Contact & Footer --- */}
-      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28">
-        <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center space-y-6 xs:space-y-8">
-          <div className="space-y-3 xs:space-y-4">
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-8 xs:py-10 sm:py-12 lg:py-16 2xl:py-20 safe-bottom" style={{paddingBottom: 'max(0px, env(safe-area-inset-bottom))'}}>
+        <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 text-center space-y-4 xs:space-y-5 sm:space-y-6">
+          <div className="space-y-2 xs:space-y-3">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Let's Connect
             </h2>
-            <p className="text-gray-300 text-xs xs:text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+            <p className="text-gray-300 text-2xs xs:text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
               I'm excited about new opportunities, collaborations, and interesting projects. Feel free to reach out!
             </p>
           </div>
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-3 xs:gap-4 sm:gap-6 flex-wrap mb-6 xs:mb-8">
+          <div className="flex flex-col xs:flex-row items-center justify-center gap-2 xs:gap-3 sm:gap-4 flex-wrap mb-4 xs:mb-5 sm:mb-6">
             <a
               href={`mailto:${portfolioData.contact.email}`}
-              className="flex items-center gap-2 px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-xs xs:text-sm sm:text-base active:scale-95"
+              className="flex items-center gap-2 px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-2xs xs:text-xs sm:text-sm active:scale-95 min-h-10 xs:min-h-11 flex-wrap"
             >
-              <MailIcon className="h-4 w-4 xs:h-5 xs:w-5" /> {portfolioData.contact.email}
+              <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 flex-shrink-0" /> <span className="truncate">{portfolioData.contact.email}</span>
             </a>
             <a
               href={`tel:${portfolioData.contact.phone}`}
-              className="flex items-center gap-2 px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-xs xs:text-sm sm:text-base active:scale-95"
+              className="flex items-center gap-2 px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-2xs xs:text-xs sm:text-sm active:scale-95 min-h-10 xs:min-h-11"
             >
               📱 {portfolioData.contact.phone}
             </a>
           </div>
-          <div className="flex justify-center gap-3 xs:gap-4 sm:gap-6 mb-6 xs:mb-8">
+          <div className="flex justify-center gap-2 xs:gap-3 sm:gap-4 mb-4 xs:mb-5 sm:mb-6">
             <a
               href={portfolioData.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+              className="p-2.5 xs:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+              title="LinkedIn"
             >
               <LinkedinIcon className="h-5 w-5 xs:h-6 xs:w-6" />
             </a>
@@ -659,13 +663,14 @@ export default function App() {
               href={portfolioData.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+              className="p-2.5 xs:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+              title="GitHub"
             >
               <GithubIcon className="h-5 w-5 xs:h-6 xs:w-6" />
             </a>
           </div>
-          <div className="pt-6 xs:pt-8 border-t border-cyan-500/10">
-            <p className="text-gray-400 text-xs xs:text-sm sm:text-base">
+          <div className="pt-3 xs:pt-4 sm:pt-5 border-t border-cyan-500/10">
+            <p className="text-gray-400 text-2xs xs:text-xs sm:text-sm">
               ©2025 Ankit Kumar. Crafted with ✌️❤️😊.
             </p>
           </div>

@@ -9,6 +9,7 @@ const config = {
     extend: {
       screens: {
         // Mobile devices
+        '2xs': '280px',     // Ultra small phones
         'xs': '320px',      // Small phones
         'sm': '480px',      // Mobile phones
         'md': '768px',      // Tablets
@@ -29,6 +30,7 @@ const config = {
         'safe-right': 'env(safe-area-inset-right)',
       },
       fontSize: {
+        '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
         'xs': ['0.75rem', { lineHeight: '1rem' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem' }],
         'base': ['1rem', { lineHeight: '1.5rem' }],
@@ -41,6 +43,12 @@ const config = {
         '6xl': ['3.75rem', { lineHeight: '1' }],
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
+      },
+      minHeight: {
+        'touch': '44px',
+      },
+      minWidth: {
+        'touch': '44px',
       },
     },
   },
