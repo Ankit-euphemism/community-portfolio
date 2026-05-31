@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ContactForm from "./components/contactForm";
-
+import ContactForm from "./components/ContactForm";
 // --- Data extracted from your resume ---
 const portfolioData = {
   name: "Ankit Kumar",
@@ -15,7 +14,7 @@ const portfolioData = {
     website: "#",
   },
   about:
-    "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (Java), master in Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
+    "Passionate about turning ideas into real-world tech solutions. I'm actively learning Data Structures and Algorithms (Java), hands-on experience in Java, building web apps with React & Node.js, and exploring AI with Python. Whether it's backend logic or frontend design — I strive to make it clean, efficient, and impactful. Explore my work, check out my journey, and let's build something amazing together.",
   education: [
     {
       degree: "Bachelor in Technology (Computer Science and Engineering)",
@@ -85,25 +84,25 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/weather_app",
     },
     {
-      title: "Spam Email Detection",
+      title: "MailClear",
       tech: "Django, BERT, Torch",
       description:
         "Developed an AI-powered web application using BERT and PyTorch for email classification",
-      link: "https://github.com/Ankit-euphemism/Spam_email_detection",
+      link: "https://github.com/Ankit-euphemism/MailClear",
     },
     {
       title: "CheckInly",
       tech: "Django, PostgreSQL",
       description:
         "Designed a web-based attendance system for marking attendance and generating reports.",
-      link: "https://github.com/Ankit-euphemism/Student-Management-System",
+      link: "https://github.com/Ankit-euphemism/CheckInly",
     },
     {
       title: "VidFind",
       tech: "Flask, Regex",
       description:
         " Developed a web application to filter and search GPUs based on title and price range",
-      link: "https://github.com/Ankit-euphemism/Simple-GPU-Finder",
+      link: "https://github.com/Ankit-euphemism/VidFind",
     },
     {
       title: "Sign Language Translator",
@@ -120,19 +119,18 @@ const portfolioData = {
     //   link: "https://github.com/Ankit-euphemism/Retrival_model.git",
     // },
     {
+      title: "Plinth- Campus ChatRoom",
+      tech: "PHP, MySQL, HTML, CSS, JavaScript, jQuery",
+      description:
+        "Plinth Chatroom is a campus chat application. It uses a pull (polling) model to keep conversations and presence updated in near real time.",
+      link: "https://github.com/Ankit-euphemism/Plinth",
+    },{
       title: "SPSS-stream",
       tech: "Data Science,IBM SPSS Modeler",
       description:
         "Developed a spss model to perform RFM Analysis on customer's data",
       link: "https://github.com/DS-techies/SPSS-stream",
     },
-    {
-      title: "Plinth- Campus ChatRoom",
-      tech: "PHP, MySQL, HTML, CSS, JavaScript, jQuery",
-      description:
-        "Plinth Chatroom is a campus chat application. It uses a pull (polling) model to keep conversations and presence updated in near real time.",
-      link: "https://github.com/Ankit-euphemism/Plinth",
-    }
   ],
   certificates: [
     "Data Concepts",
@@ -290,6 +288,7 @@ export default function App() {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
+      { href: "#certificates", label: "Certificates" },
     { href: "#contact-form", label: "Contact" },
   ];
 
@@ -311,46 +310,57 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-gray-900 text-gray-200 font-sans leading-relaxed">
+    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen">
+      {/* Animated background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+      </div>
+
       {/* --- Header --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80 backdrop-blur-md shadow-md">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#home" className="text-2xl font-bold text-cyan-400">
-            Ankit Kumar
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl">
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-3 xs:py-4 sm:py-5 flex justify-between items-center">
+          <a href="#home" className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap">
+            ✨ Ankit Kumar
           </a>
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden lg:flex gap-0.5 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-lg transition-colors duration-300 ${activeSection === link.href.substring(1) ? "text-cyan-400" : "text-gray-300 hover:text-cyan-400"}`}
+                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap ${
+                  activeSection === link.href.substring(1)
+                    ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
+                    : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
+                }`}
               >
                 {link.label}
               </a>
             ))}
           </nav>
-          <button className="md:hidden" onClick={() => setIsMenuOpen(true)}>
-            <MenuIcon className="h-6 w-6 text-gray-300" />
+          <button className="lg:hidden p-2 hover:bg-cyan-500/10 rounded-lg transition-colors" onClick={() => setIsMenuOpen(true)}>
+            <MenuIcon className="h-5 w-5 xs:h-6 xs:w-6 text-gray-300" />
           </button>
         </div>
       </header>
 
       {/* --- Mobile Menu --- */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900 z-50 flex flex-col items-center justify-center md:hidden">
+        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6"
+            className="absolute top-4 xs:top-6 right-3 xs:right-6 p-2 hover:bg-cyan-500/10 rounded-lg transition-colors"
           >
-            <XIcon className="h-8 w-8 text-gray-300" />
+            <XIcon className="h-6 w-6 xs:h-8 xs:w-8 text-gray-300" />
           </button>
-          <nav className="flex flex-col space-y-8 text-center">
+          <nav className="flex flex-col gap-6 xs:gap-8 text-center">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-2xl font-semibold text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                className="text-lg xs:text-xl sm:text-2xl font-semibold text-gray-300 hover:text-cyan-400 transition-colors duration-300 active:text-cyan-300"
               >
                 {link.label}
               </a>
@@ -359,93 +369,128 @@ export default function App() {
         </div>
       )}
 
-      <main className="container mx-auto px-6 pt-24">
+      <main className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 2xl:px-10 pt-16 xs:pt-20 sm:pt-24 lg:pt-28">
         {/* --- Hero Section --- */}
         <section
           id="home"
-          className="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-16 md:pt-0"
+          className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center text-center lg:text-left py-8 xs:py-12 sm:py-16 lg:py-20 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 2xl:gap-16"
         >
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-cyan-400">Ankit Kumar</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-8">
+          <div className="w-full lg:w-1/2 space-y-4 xs:space-y-5 sm:space-y-6 lg:space-y-8 relative z-10">
+            <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+              <p className="text-cyan-400 font-semibold text-xs xs:text-sm sm:text-base lg:text-lg tracking-widest uppercase">
+                Welcome to my portfolio
+              </p>
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold leading-tight">
+                Hi, I'm <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Ankit</span>
+              </h1>
+            </div>
+            <p className="text-sm xs:text-base sm:text-lg lg:text-xl 2xl:text-2xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
               {" "}
-              BTech CSE Student | MERN Stack Developer | DSA (Java) & AI
-              Enthusiast | Internship-Ready Full-Stack Learner{" "}
+              BTech CSE Student | Software Engineer | Full-Stack Developer | DSA (Java) Enthusiast | AI Explorer
             </p>
-            <div className="flex justify-center md:justify-start space-x-6">
+            <p className="text-xs xs:text-sm sm:text-base text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              Building scalable web applications and solving real-world problems with modern tech. Currently exploring full-stack development, AI and machine learning.
+            </p>
+            <div className="flex justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-4 xs:pt-5">
               <a
                 href={portfolioData.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
+                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
               >
-                <LinkedinIcon className="h-8 w-8" />
+                <LinkedinIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
               <a
                 href={portfolioData.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
+                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
               >
-                <GithubIcon className="h-8 w-8" />
+                <GithubIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
               <a
                 href={`mailto:${portfolioData.contact.email}`}
-                className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
+                className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30"
               >
-                <MailIcon className="h-8 w-8" />
+                <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
-            <a
-              href="#contact-form"
-              className="mt-8 inline-block bg-cyan-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Me
-            </a>
+            <div className="flex flex-col xs:flex-row justify-center lg:justify-start gap-3 xs:gap-4 pt-4 xs:pt-6">
+              <a
+                href="#contact-form"
+                className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold py-2 xs:py-2.5 sm:py-3 px-5 xs:px-6 sm:px-8 text-sm xs:text-base rounded-lg xs:rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 active:scale-95"
+              >
+                Get In Touch
+              </a>
+              <a
+                href="#projects"
+                className="inline-block border-2 border-cyan-400/50 text-cyan-300 font-semibold py-2 xs:py-2.5 sm:py-3 px-5 xs:px-6 sm:px-8 text-sm xs:text-base rounded-lg xs:rounded-xl hover:border-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 active:bg-cyan-500/20"
+              >
+                View My Work
+              </a>
+            </div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/20">
-              <img
-                src={portfolioData.imageUrl}
-                alt={portfolioData.name}
-                className="w-full h-full object-cover"
-              />
+          <div className="w-full lg:w-1/2 flex justify-center relative z-10 mt-6 xs:mt-8 sm:mt-10 lg:mt-0">
+            <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 3xl:w-[28rem] 3xl:h-[28rem]">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" />
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-blue-400 shadow-2xl shadow-cyan-500/30 relative">
+                <img
+                  src={portfolioData.imageUrl}
+                  alt={portfolioData.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* --- About Section --- */}
-        <section id="about" className="py-20">
-          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-gray-800 p-8 rounded-lg shadow-xl">
-            <p className="text-lg text-gray-300">{portfolioData.about}</p>
+        <section id="about" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">About Me</span>
+            </h2>
+            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl sm:rounded-2xl blur opacity-75 group-hover:opacity-100 transition-all duration-300" />
+              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 p-6 xs:p-8 sm:p-10 lg:p-12 2xl:p-14 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-2xl">
+                <p className="text-sm xs:text-base sm:text-lg lg:text-xl 2xl:text-2xl text-gray-200 leading-relaxed">{portfolioData.about}</p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* --- Experience Section --- */}
-        <section id="experience" className="py-20">
-          <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
-          <div className="max-w-4xl mx-auto align-middle">
+        <section id="experience" className="py-24 relative z-10">
+          <div className="space-y-4 text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Experience</span>
+            </h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          </div>
+          <div className="max-w-4xl mx-auto space-y-6">
             {portfolioData.experience.map((exp, index) => (
-              <div key={index} className="mb-12 flex justify-center w-full">
-                <div>
-                  <div className="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-cyan-500/20 transition-shadow duration-300">
-                    <h3 className="text-xl font-bold text-cyan-400 text-center">
-                      {exp.role}
-                    </h3>
-                    <p className="text-md font-semibold text-gray-300 mb-2 text-center">
-                      {exp.company}
-                    </p>
-                    <p className="text-sm text-gray-400 mb-3">
-                      {exp.duration} &bull; {exp.location}
-                    </p>
-                    <ul className="list-disc list-inside text-gray-400 text-sm ">
-                      {exp.description.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
+              <div key={index} className="group">
+                <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-8 rounded-xl shadow-lg group-hover:shadow-cyan-500/30 transition-all duration-300 group-hover:border-cyan-500/40 group-hover:translate-x-2">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-2">
+                        {exp.role}
+                      </h3>
+                      <p className="text-lg font-semibold text-gray-200 mb-1">{exp.company}</p>
+                      <p className="text-sm text-cyan-400/70 mb-4 font-medium">{exp.duration} • {exp.location}</p>
+                      <ul className="space-y-2">
+                        {exp.description.map((item, i) => (
+                          <li key={i} className="text-gray-300 flex items-start gap-3">
+                            <span className="text-cyan-400 font-bold mt-1">▸</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -454,126 +499,176 @@ export default function App() {
         </section>
 
         {/* --- Projects Section --- */}
-        <section id="projects" className="py-20">
-          <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="projects" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Featured Projects</span>
+            </h2>
+            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 lg:gap-8">
             {portfolioData.projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-800 p-6 rounded-lg shadow-xl flex flex-col transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-cyan-500/20"
-              >
-                <h3 className="text-xl font-bold text-cyan-400 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-gray-400 mb-4 flex-grow">
-                  {project.description}
-                </p>
-                <p className="text-xs text-cyan-300 mb-4 italic">
-                  {project.tech}
-                </p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto text-center bg-gray-700 text-gray-200 py-2 px-4 rounded-lg hover:bg-cyan-500 hover:text-white transition-colors duration-300"
-                >
-                  View Project
-                </a>
+              <div key={index} className="group h-full">
+                <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 p-5 xs:p-6 sm:p-7 rounded-lg xs:rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-2 flex flex-col h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-lg xs:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative">
+                    <h3 className="text-lg xs:text-xl sm:text-base lg:text-lg font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-2 xs:mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 mb-3 xs:mb-4 text-xs xs:text-sm sm:text-xs lg:text-sm leading-relaxed flex-grow">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 xs:gap-2 mb-4 xs:mb-5">
+                      {project.tech.split(", ").slice(0, 3).map((tech, i) => (
+                        <span key={i} className="text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-3 py-1 rounded-full border border-cyan-500/30 font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.tech.split(", ").length > 3 && (
+                        <span className="text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-3 py-1 rounded-full border border-cyan-500/30 font-medium">
+                          +{project.tech.split(", ").length - 3}
+                        </span>
+                      )}
+                    </div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-cyan-500/80 to-blue-500/80 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold py-2 xs:py-2.5 px-3 xs:px-4 rounded-lg text-xs xs:text-sm transition-all duration-300 gap-2 mt-auto active:scale-95"
+                    >
+                      View →
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
         {/* --- Skills Section --- */}
-        <section id="skills" className="py-20">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Technical Skills
-          </h2>
-          <div className="max-w-5xl mx-auto">
+        <section id="skills" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Technical Skills</span>
+            </h2>
+            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          </div>
+          <div className="max-w-5xl mx-auto space-y-8 xs:space-y-10 sm:space-y-12">
             {Object.entries(portfolioData.skills).map(
-              ([category, skillsList]) => (
-                <div key={category} className="mb-8">
-                  <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
-                    {category.replace(/([A-Z])/g, " $1").trim()}
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {skillsList.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-700 text-gray-200 py-2 px-4 rounded-full text-sm shadow-md"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+              ([category, skillsList], catIndex) => {
+                const categoryGradients = [
+                  'from-cyan-500 to-blue-500',
+                  'from-blue-500 to-purple-500',
+                  'from-purple-500 to-pink-500',
+                  'from-pink-500 to-rose-500',
+                  'from-rose-500 to-orange-500',
+                  'from-orange-500 to-amber-500',
+                ];
+                const gradient = categoryGradients[catIndex % categoryGradients.length];
+                
+                return (
+                  <div key={category}>
+                    <h3 className={`text-xl xs:text-2xl sm:text-3xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-4 xs:mb-5`}>
+                      {category.replace(/([A-Z])/g, " $1").trim()}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 xs:gap-3 sm:gap-4">
+                      {skillsList.map((skill, index) => (
+                        <span
+                          key={index}
+                          className={`bg-gradient-to-r ${gradient} bg-opacity-10 text-gray-200 border border-gray-600/50 hover:border-cyan-400/50 py-1.5 xs:py-2 px-3 xs:px-4 rounded-full text-xs xs:text-sm font-medium shadow-md transition-all duration-300 hover:bg-opacity-20 hover:text-cyan-300 active:scale-95`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ),
+                );
+              },
             )}
           </div>
         </section>
 
         {/* --- Certificates Section --- */}
-        <section id="certificates" className="py-20">
-          <h2 className="text-4xl font-bold text-center mb-12">Certificates</h2>
-          <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
-            {portfolioData.certificates.map((cert, index) => (
-              <span
-                key={index}
-                className="bg-gray-800 text-cyan-300 py-2 px-5 rounded-lg text-md shadow-lg"
-              >
-                {cert}
-              </span>
-            ))}
+        <section id="certificates" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
+          <div className="space-y-3 xs:space-y-4 sm:space-y-6 text-center mb-10 xs:mb-12 sm:mb-14 lg:mb-16">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Certifications & Achievements</span>
+            </h2>
+            <div className="h-0.5 xs:h-1 w-12 xs:w-16 sm:w-20 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 lg:gap-6">
+              {portfolioData.certificates.map((cert, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl border border-cyan-500/20 hover:border-cyan-500/40 px-4 xs:px-5 sm:px-6 py-3 xs:py-4 rounded-lg xs:rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:translate-y-1"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-lg xs:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <p className="text-gray-200 font-semibold text-xs xs:text-sm sm:text-base relative text-center">
+                    ✓ {cert}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* --- Contact Form Section --- */}
-        <section id="contact-form" className="py-20">
+        <section id="contact-form" className="py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28 relative z-10">
           <div className="max-w-3xl mx-auto">
             <ContactForm />
           </div>
         </section>
-      </main>
+     </main>
 
       {/* --- Contact & Footer --- */}
-      <footer id="contact" className="bg-gray-800 py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-            I'm currently looking for new opportunities. Feel free to reach out
-            if you have any questions or just want to connect!
-          </p>
-          <a
-            href={`mailto:${portfolioData.contact.email}`}
-            className="text-xl text-cyan-400 hover:underline mb-8 inline-block"
-          >
-            {portfolioData.contact.email}
-          </a>{" "}
-          <br />
-          <a href={`tel:${portfolioData.contact.phone}`} className="text-xl text-cyan-400 hover:underline mb-8 inline-block">
-            {portfolioData.contact.phone}
-          </a>
-          <div className="flex justify-center space-x-6 mb-8">
+      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-12 xs:py-16 sm:py-20 lg:py-24 2xl:py-28">
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center space-y-6 xs:space-y-8">
+          <div className="space-y-3 xs:space-y-4">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Let's Connect
+            </h2>
+            <p className="text-gray-300 text-xs xs:text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+              I'm excited about new opportunities, collaborations, and interesting projects. Feel free to reach out!
+            </p>
+          </div>
+          <div className="flex flex-col xs:flex-row items-center justify-center gap-3 xs:gap-4 sm:gap-6 flex-wrap mb-6 xs:mb-8">
+            <a
+              href={`mailto:${portfolioData.contact.email}`}
+              className="flex items-center gap-2 px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-xs xs:text-sm sm:text-base active:scale-95"
+            >
+              <MailIcon className="h-4 w-4 xs:h-5 xs:w-5" /> {portfolioData.contact.email}
+            </a>
+            <a
+              href={`tel:${portfolioData.contact.phone}`}
+              className="flex items-center gap-2 px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-xs xs:text-sm sm:text-base active:scale-95"
+            >
+              📱 {portfolioData.contact.phone}
+            </a>
+          </div>
+          <div className="flex justify-center gap-3 xs:gap-4 sm:gap-6 mb-6 xs:mb-8">
             <a
               href={portfolioData.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
+              className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
             >
-              <LinkedinIcon className="h-8 w-8" />
+              <LinkedinIcon className="h-5 w-5 xs:h-6 xs:w-6" />
             </a>
             <a
               href={portfolioData.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
+              className="p-2 xs:p-2.5 sm:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
             >
-              <GithubIcon className="h-8 w-8" />
+              <GithubIcon className="h-5 w-5 xs:h-6 xs:w-6" />
             </a>
           </div>
-          <p className="text-gray-500">
-            &copy; {new Date().getFullYear()} Ankit Kumar. All Rights Reserved.
-          </p>
+          <div className="pt-6 xs:pt-8 border-t border-cyan-500/10">
+            <p className="text-gray-400 text-xs xs:text-sm sm:text-base">
+              ©2025 Ankit Kumar. Crafted with ✌️❤️😊.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
