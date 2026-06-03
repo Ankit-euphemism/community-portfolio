@@ -418,16 +418,16 @@ export default function App() {
                 <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
-            <div className="flex flex-col xs:flex-row justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-4">
+            <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-4">
               <a
                 href="#contact-form"
-                className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 active:scale-95 min-h-10 flex items-center justify-center"
+                className="inline-flex w-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-950 font-bold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 active:scale-95 min-h-10 items-center justify-center"
               >
                 Get In Touch
               </a>
               <a
                 href="#projects"
-                className="inline-block border-2 border-cyan-400/50 text-cyan-300 font-semibold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:border-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 active:bg-cyan-500/20 min-h-10 flex items-center justify-center"
+                className="inline-flex w-auto border-2 border-cyan-400/50 text-cyan-300 font-semibold py-2 xs:py-2.5 sm:py-3 px-4 xs:px-5 sm:px-7 text-xs xs:text-sm sm:text-base rounded-lg xs:rounded-xl hover:border-cyan-300 hover:bg-cyan-500/10 transition-all duration-300 active:bg-cyan-500/20 min-h-10 items-center justify-center"
               >
                 View My Work
               </a>

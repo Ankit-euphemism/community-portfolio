@@ -107,14 +107,36 @@ select {
 @media (max-width: 374px) {
   /* Extra small phones */
   html {
-    font-size: 14px;
+    /* slightly larger base for very small phones to improve readability */
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 639px) {
+  /* small phones / large phones */
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* tablets and small laptops */
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1535px) {
+  /* desktop */
+  html {
+    font-size: 20px;
   }
 }
 
 @media (min-width: 1536px) {
   /* Large desktops */
   html {
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 
