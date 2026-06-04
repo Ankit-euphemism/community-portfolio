@@ -24,6 +24,8 @@ const contactSchema = yup.object({
     .required("Please enter a message."),
 });
 
+const SUBMISSION_TIMEOUT_MS = 10000;
+
 export default function ContactForm() {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,7 +72,8 @@ export default function ContactForm() {
     event.preventDefault();
     setResult("");
 
-    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
     const formValues = {
       name: formData.get("name") ?? "",
       email: formData.get("email") ?? "",
@@ -97,21 +100,33 @@ export default function ContactForm() {
       return;
     }
 
+    const accessKey = import.meta.env.VITE_FORM_KEY;
+
+    if (!accessKey) {
+      setResult("Contact form is not configured yet. Please email me directly.");
+      return;
+    }
+
     setIsSubmitting(true);
     setResult("Sending...");
 
-    const submissionData = new FormData(event.currentTarget);
-    submissionData.append("access_key", import.meta.env.VITE_FORM_KEY);
+    const submissionData = new FormData(formElement);
+    submissionData.append("access_key", accessKey);
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => {
+      controller.abort();
+    }, SUBMISSION_TIMEOUT_MS);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: submissionData,
+        signal: controller.signal,
       });
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setResult("Thanks! Your message has been sent successfully.");
         setValues({
           name: "",
@@ -119,13 +134,18 @@ export default function ContactForm() {
           subject: "",
           message: "",
         });
-        event.currentTarget.reset();
+        formElement.reset();
       } else {
         setResult("Unable to submit right now. Please try again shortly.");
       }
-    } catch {
-      setResult("Unable to submit right now. Please try again shortly.");
+    } catch (error) {
+      if (error.name === "AbortError") {
+        setResult("Sending is taking too long. Please try again or email me directly.");
+      } else {
+        setResult("Unable to submit right now. Please try again shortly.");
+      }
     } finally {
+      window.clearTimeout(timeoutId);
       setIsSubmitting(false);
     }
   };

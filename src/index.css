@@ -129,14 +129,14 @@ select {
 @media (min-width: 1024px) and (max-width: 1535px) {
   /* desktop */
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 1536px) {
   /* Large desktops */
   html {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
