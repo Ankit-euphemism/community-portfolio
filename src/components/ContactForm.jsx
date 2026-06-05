@@ -135,8 +135,10 @@ export default function ContactForm() {
           message: "",
         });
         formElement.reset();
+        console.log("Form submission successful:", data);
       } else {
         setResult("Unable to submit right now. Please try again shortly.");
+        console.log(data.error);
       }
     } catch (error) {
       if (error.name === "AbortError") {
