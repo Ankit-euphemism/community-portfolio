@@ -346,8 +346,16 @@ export default function App() {
               </a>
             ))}
           </nav>
-          <button className="lg:hidden p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center" onClick={() => setIsMenuOpen(true)} aria-label="Open menu">
-            <MenuIcon className="h-5 w-5 xs:h-6 xs:w-6 text-gray-300" />
+          <button
+            className="lg:hidden p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? (
+              <XIcon className="h-5 w-5 xs:h-6 xs:w-6 text-gray-300" />
+            ) : (
+              <MenuIcon className="h-5 w-5 xs:h-6 xs:w-6 text-gray-300" />
+            )}
           </button>
         </div>
       </header>
