@@ -124,7 +124,15 @@ const portfolioData = {
       description:
         "Plinth Chatroom is a campus chat application. It uses a pull (polling) model to keep conversations and presence updated in near real time.",
       link: "https://github.com/Ankit-euphemism/Plinth",
-    },{
+    },
+    {
+      title: "RPG Dragon Repeller",
+      tech: "HTML, CSS, JavaScript",
+      description:
+        "Dragon Repeller is a mini text-based adventure where you train your character and prepare for a final dragon battle.",
+      link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller.git"
+    },
+    {
       title: "SPSS-stream",
       tech: "Data Science,IBM SPSS Modeler",
       description:
@@ -288,7 +296,7 @@ export default function App() {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
-      { href: "#certificates", label: "Certificates" },
+    { href: "#certificates", label: "Certificates" },
     { href: "#contact-form", label: "Contact" },
   ];
 
@@ -310,7 +318,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen overflow-x-hidden scroll-smooth" style={{scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased', WebkitTouchCallout: 'none'}}>
+    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen overflow-x-hidden scroll-smooth" style={{ scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased', WebkitTouchCallout: 'none' }}>
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
@@ -319,7 +327,7 @@ export default function App() {
       </div>
 
       {/* --- Header --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl safe-top" style={{paddingTop: 'max(0px, env(safe-area-inset-top))'}}>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl safe-top" style={{ paddingTop: 'max(0px, env(safe-area-inset-top))' }}>
         <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 py-2.5 xs:py-3 sm:py-4 lg:py-5 flex justify-between items-center">
           <a href="#home" className="text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap">
             ✨ Ankit Kumar
@@ -329,11 +337,10 @@ export default function App() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap active:scale-95 ${
-                  activeSection === link.href.substring(1)
-                    ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
-                    : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
-                }`}
+                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap active:scale-95 ${activeSection === link.href.substring(1)
+                  ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
+                  : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
+                  }`}
               >
                 {link.label}
               </a>
@@ -347,7 +354,7 @@ export default function App() {
 
       {/* --- Mobile Menu --- */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden" style={{paddingTop: 'max(0px, env(safe-area-inset-top))', paddingBottom: 'max(0px, env(safe-area-inset-bottom))'}}>
+        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden" style={{ paddingTop: 'max(0px, env(safe-area-inset-top))', paddingBottom: 'max(0px, env(safe-area-inset-bottom))' }}>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-3 xs:top-4 right-2 xs:right-3 p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center"
@@ -370,7 +377,7 @@ export default function App() {
         </div>
       )}
 
-      <main className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 2xl:px-10 pt-14 xs:pt-16 sm:pt-20 lg:pt-24 2xl:pt-28" style={{paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))'}}>
+      <main className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 2xl:px-10 pt-14 xs:pt-16 sm:pt-20 lg:pt-24 2xl:pt-28" style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}>
         {/* --- Hero Section --- */}
         <section
           id="home"
@@ -568,7 +575,7 @@ export default function App() {
                   'from-orange-500 to-amber-500',
                 ];
                 const gradient = categoryGradients[catIndex % categoryGradients.length];
-                
+
                 return (
                   <div key={category}>
                     <h3 className={`text-lg xs:text-xl sm:text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3 xs:mb-4`}>
@@ -622,10 +629,10 @@ export default function App() {
             <ContactForm />
           </div>
         </section>
-     </main>
+      </main>
 
       {/* --- Contact & Footer --- */}
-      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-8 xs:py-10 sm:py-12 lg:py-16 2xl:py-20 safe-bottom" style={{paddingBottom: 'max(0px, env(safe-area-inset-bottom))'}}>
+      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-8 xs:py-10 sm:py-12 lg:py-16 2xl:py-20 safe-bottom" style={{ paddingBottom: 'max(0px, env(safe-area-inset-bottom))' }}>
         <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 text-center space-y-4 xs:space-y-5 sm:space-y-6">
           <div className="space-y-2 xs:space-y-3">
             <h2 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
