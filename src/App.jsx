@@ -70,6 +70,12 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/SchoolDekho",
     },
     {
+      title: "CLauseIQ",
+      tech: "FastAPI, Hugging Face, OpenRouter",
+      description:"ClauseIQ is a personal document intelligence project for asking natural-language questions over uploaded documents. It uses a retrieval-based approach to find relevant information in the documents and answer questions.",
+      link: "https://github.com/Ankit-euphemism/ClauseIQ",
+    },
+    {
       title: "taskstag",
       tech: "MERN STACK, MySQL",
       description:
@@ -130,7 +136,7 @@ const portfolioData = {
       tech: "HTML, CSS, JavaScript",
       description:
         "Dragon Repeller is a mini text-based adventure where you train your character and prepare for a final dragon battle.",
-      link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller.git"
+      link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller.git",
     },
     {
       title: "SPSS-stream",
@@ -162,13 +168,9 @@ const portfolioData = {
       "Django",
       "Flask",
       "REST APIs",
+      "FastAPI",
     ],
-    Databases: [
-      "MySQL",
-      "PostgreSQL",
-      "MongoDB",
-      "SQLite",
-    ],
+    Databases: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
     DeveloperTools: [
       "Git",
       "GitHub",
@@ -177,6 +179,8 @@ const portfolioData = {
       "VS Code",
       "IntelliJ",
       "PyCharm",
+      "Hugging Face",
+      "OpenRouter",
     ],
     Libraries: [
       "Pandas",
@@ -185,12 +189,16 @@ const portfolioData = {
       "Matplotlib",
       "Axios",
       "Multer",
+      "OpenCV",
+      "Uvicorn",
+      "Pydantic",
     ],
     Others: [
       "Problem Solving",
       "Debugging and Testing",
       "API Development",
       "Database Design",
+      "Version Control",
     ],
     SoftSkills: ["Teamwork", "Quick learning", "Communication"],
   },
@@ -318,7 +326,14 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen overflow-x-hidden scroll-smooth" style={{ scrollBehavior: 'smooth', WebkitFontSmoothing: 'antialiased', WebkitTouchCallout: 'none' }}>
+    <div
+      className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-gray-900 text-gray-100 font-sans leading-relaxed min-h-screen overflow-x-hidden scroll-smooth"
+      style={{
+        scrollBehavior: "smooth",
+        WebkitFontSmoothing: "antialiased",
+        WebkitTouchCallout: "none",
+      }}
+    >
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
@@ -327,9 +342,15 @@ export default function App() {
       </div>
 
       {/* --- Header --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl safe-top" style={{ paddingTop: 'max(0px, env(safe-area-inset-top))' }}>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-gray-900/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl safe-top"
+        style={{ paddingTop: "max(0px, env(safe-area-inset-top))" }}
+      >
         <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 py-2.5 xs:py-3 sm:py-4 lg:py-5 flex justify-between items-center">
-          <a href="#home" className="text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap">
+          <a
+            href="#home"
+            className="text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all whitespace-nowrap"
+          >
             ✨ Ankit Kumar
           </a>
           <nav className="hidden lg:flex gap-0.5 items-center">
@@ -337,10 +358,11 @@ export default function App() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap active:scale-95 ${activeSection === link.href.substring(1)
-                  ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
-                  : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
-                  }`}
+                className={`px-2 xs:px-3 sm:px-4 py-2 rounded-lg text-xs xs:text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap active:scale-95 ${
+                  activeSection === link.href.substring(1)
+                    ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/30"
+                    : "text-gray-400 hover:text-cyan-300 hover:bg-cyan-500/10"
+                }`}
               >
                 {link.label}
               </a>
@@ -362,7 +384,13 @@ export default function App() {
 
       {/* --- Mobile Menu --- */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden" style={{ paddingTop: 'max(0px, env(safe-area-inset-top))', paddingBottom: 'max(0px, env(safe-area-inset-bottom))' }}>
+        <div
+          className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center lg:hidden"
+          style={{
+            paddingTop: "max(0px, env(safe-area-inset-top))",
+            paddingBottom: "max(0px, env(safe-area-inset-bottom))",
+          }}
+        >
           <button
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-3 xs:top-4 right-2 xs:right-3 p-2 min-h-12 min-w-12 hover:bg-cyan-500/10 rounded-lg transition-colors active:scale-95 flex items-center justify-center"
@@ -385,7 +413,13 @@ export default function App() {
         </div>
       )}
 
-      <main className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 2xl:px-10 pt-14 xs:pt-16 sm:pt-20 lg:pt-24 2xl:pt-28" style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}>
+      <main
+        className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 2xl:px-10 pt-14 xs:pt-16 sm:pt-20 lg:pt-24 2xl:pt-28"
+        style={{
+          paddingLeft: "max(0.5rem, env(safe-area-inset-left))",
+          paddingRight: "max(0.5rem, env(safe-area-inset-right))",
+        }}
+      >
         {/* --- Hero Section --- */}
         <section
           id="home"
@@ -397,14 +431,20 @@ export default function App() {
                 Welcome to my portfolio
               </p>
               <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight break-words">
-                Hi, I'm <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Ankit</span>
+                Hi, I'm{" "}
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Ankit
+                </span>
               </h1>
             </div>
             <p className="text-xs xs:text-sm sm:text-base lg:text-lg 2xl:text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              BTech CSE Student | Software Engineer | Full-Stack Developer | DSA (Java) Enthusiast | AI Explorer
+              BTech CSE Student | Software Engineer | Full-Stack Developer | DSA
+              (Java) Enthusiast | AI Explorer
             </p>
             <p className="text-2xs xs:text-xs sm:text-sm text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Building scalable web applications and solving real-world problems with modern tech. Currently exploring full-stack development, AI and machine learning.
+              Building scalable web applications and solving real-world problems
+              with modern tech. Currently exploring full-stack development, AI
+              and machine learning.
             </p>
             <div className="flex justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-3 sm:pt-4">
               <a
@@ -463,10 +503,15 @@ export default function App() {
         </section>
 
         {/* --- About Section --- */}
-        <section id="about" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="about"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="space-y-2 xs:space-y-3 sm:space-y-4 lg:space-y-5 text-center mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">About Me</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                About Me
+              </span>
             </h2>
             <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
@@ -474,17 +519,24 @@ export default function App() {
             <div className="relative group">
               <div className="absolute -inset-0.5 xs:-inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-lg xs:rounded-xl sm:rounded-2xl blur opacity-75 group-hover:opacity-100 transition-all duration-300" />
               <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/20 p-4 xs:p-5 sm:p-7 lg:p-8 2xl:p-10 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-2xl">
-                <p className="text-xs xs:text-sm sm:text-base lg:text-lg 2xl:text-xl text-gray-200 leading-relaxed">{portfolioData.about}</p>
+                <p className="text-xs xs:text-sm sm:text-base lg:text-lg 2xl:text-xl text-gray-200 leading-relaxed">
+                  {portfolioData.about}
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* --- Experience Section --- */}
-        <section id="experience" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="experience"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Experience</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Experience
+              </span>
             </h2>
             <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
@@ -498,12 +550,21 @@ export default function App() {
                       <h3 className="text-lg xs:text-xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent mb-1 xs:mb-2 break-words">
                         {exp.role}
                       </h3>
-                      <p className="text-base xs:text-lg font-semibold text-gray-200 mb-0.5 xs:mb-1">{exp.company}</p>
-                      <p className="text-xs xs:text-sm text-cyan-400/70 mb-2 xs:mb-3 font-medium break-words">{exp.duration} • {exp.location}</p>
+                      <p className="text-base xs:text-lg font-semibold text-gray-200 mb-0.5 xs:mb-1">
+                        {exp.company}
+                      </p>
+                      <p className="text-xs xs:text-sm text-cyan-400/70 mb-2 xs:mb-3 font-medium break-words">
+                        {exp.duration} • {exp.location}
+                      </p>
                       <ul className="space-y-1 xs:space-y-2">
                         {exp.description.map((item, i) => (
-                          <li key={i} className="text-gray-300 flex items-start gap-2 xs:gap-3 text-2xs xs:text-xs sm:text-sm">
-                            <span className="text-cyan-400 font-bold mt-0.5 flex-shrink-0">▸</span>
+                          <li
+                            key={i}
+                            className="text-gray-300 flex items-start gap-2 xs:gap-3 text-2xs xs:text-xs sm:text-sm"
+                          >
+                            <span className="text-cyan-400 font-bold mt-0.5 flex-shrink-0">
+                              ▸
+                            </span>
                             <span className="break-words">{item}</span>
                           </li>
                         ))}
@@ -517,10 +578,15 @@ export default function App() {
         </section>
 
         {/* --- Projects Section --- */}
-        <section id="projects" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="projects"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Featured Projects</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Featured Projects
+              </span>
             </h2>
             <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
@@ -537,11 +603,17 @@ export default function App() {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-1 xs:gap-1.5 mb-3 xs:mb-3.5">
-                      {project.tech.split(", ").slice(0, 3).map((tech, i) => (
-                        <span key={i} className="text-2xs xs:text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-2.5 py-0.5 xs:py-1 rounded-full border border-cyan-500/30 font-medium whitespace-nowrap">
-                          {tech}
-                        </span>
-                      ))}
+                      {project.tech
+                        .split(", ")
+                        .slice(0, 3)
+                        .map((tech, i) => (
+                          <span
+                            key={i}
+                            className="text-2xs xs:text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-2.5 py-0.5 xs:py-1 rounded-full border border-cyan-500/30 font-medium whitespace-nowrap"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       {project.tech.split(", ").length > 3 && (
                         <span className="text-2xs xs:text-xs bg-cyan-500/20 text-cyan-300 px-2 xs:px-2.5 py-0.5 xs:py-1 rounded-full border border-cyan-500/30 font-medium">
                           +{project.tech.split(", ").length - 3}
@@ -564,10 +636,15 @@ export default function App() {
         </section>
 
         {/* --- Skills Section --- */}
-        <section id="skills" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="skills"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Technical Skills</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Technical Skills
+              </span>
             </h2>
             <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
@@ -575,18 +652,21 @@ export default function App() {
             {Object.entries(portfolioData.skills).map(
               ([category, skillsList], catIndex) => {
                 const categoryGradients = [
-                  'from-cyan-500 to-blue-500',
-                  'from-blue-500 to-purple-500',
-                  'from-purple-500 to-pink-500',
-                  'from-pink-500 to-rose-500',
-                  'from-rose-500 to-orange-500',
-                  'from-orange-500 to-amber-500',
+                  "from-cyan-500 to-blue-500",
+                  "from-blue-500 to-purple-500",
+                  "from-purple-500 to-pink-500",
+                  "from-pink-500 to-rose-500",
+                  "from-rose-500 to-orange-500",
+                  "from-orange-500 to-amber-500",
                 ];
-                const gradient = categoryGradients[catIndex % categoryGradients.length];
+                const gradient =
+                  categoryGradients[catIndex % categoryGradients.length];
 
                 return (
                   <div key={category}>
-                    <h3 className={`text-lg xs:text-xl sm:text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3 xs:mb-4`}>
+                    <h3
+                      className={`text-lg xs:text-xl sm:text-2xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3 xs:mb-4`}
+                    >
                       {category.replace(/([A-Z])/g, " $1").trim()}
                     </h3>
                     <div className="flex flex-wrap gap-1.5 xs:gap-2 sm:gap-3">
@@ -607,10 +687,15 @@ export default function App() {
         </section>
 
         {/* --- Certificates Section --- */}
-        <section id="certificates" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="certificates"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="space-y-2 xs:space-y-3 sm:space-y-4 text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-3 sm:px-0">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Certifications & Achievements</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Certifications & Achievements
+              </span>
             </h2>
             <div className="h-0.5 xs:h-1 w-10 xs:w-12 sm:w-16 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
           </div>
@@ -632,7 +717,10 @@ export default function App() {
         </section>
 
         {/* --- Contact Form Section --- */}
-        <section id="contact-form" className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10">
+        <section
+          id="contact-form"
+          className="py-8 xs:py-10 sm:py-14 lg:py-16 2xl:py-20 relative z-10"
+        >
           <div className="max-w-3xl mx-auto px-2 xs:px-3 sm:px-0">
             <ContactForm />
           </div>
@@ -640,14 +728,19 @@ export default function App() {
       </main>
 
       {/* --- Contact & Footer --- */}
-      <footer id="contact" className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-8 xs:py-10 sm:py-12 lg:py-16 2xl:py-20 safe-bottom" style={{ paddingBottom: 'max(0px, env(safe-area-inset-bottom))' }}>
+      <footer
+        id="contact"
+        className="relative z-10 bg-gradient-to-t from-slate-950 via-slate-900 to-gray-900 border-t border-cyan-500/10 py-8 xs:py-10 sm:py-12 lg:py-16 2xl:py-20 safe-bottom"
+        style={{ paddingBottom: "max(0px, env(safe-area-inset-bottom))" }}
+      >
         <div className="container mx-auto px-2 xs:px-3 sm:px-6 lg:px-8 text-center space-y-4 xs:space-y-5 sm:space-y-6">
           <div className="space-y-2 xs:space-y-3">
             <h2 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Let's Connect
             </h2>
             <p className="text-gray-300 text-2xs xs:text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-              I'm excited about new opportunities, collaborations, and interesting projects. Feel free to reach out!
+              I'm excited about new opportunities, collaborations, and
+              interesting projects. Feel free to reach out!
             </p>
           </div>
           <div className="flex flex-col xs:flex-row items-center justify-center gap-2 xs:gap-3 sm:gap-4 flex-wrap mb-4 xs:mb-5 sm:mb-6">
@@ -655,7 +748,8 @@ export default function App() {
               href={`mailto:${portfolioData.contact.email}`}
               className="flex items-center gap-2 px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-2xs xs:text-xs sm:text-sm active:scale-95 min-h-10 xs:min-h-11 flex-wrap"
             >
-              <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 flex-shrink-0" /> <span className="truncate">{portfolioData.contact.email}</span>
+              <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 flex-shrink-0" />{" "}
+              <span className="truncate">{portfolioData.contact.email}</span>
             </a>
             <a
               href={`tel:${portfolioData.contact.phone}`}
