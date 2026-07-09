@@ -72,7 +72,8 @@ const portfolioData = {
     {
       title: "CLauseIQ",
       tech: "FastAPI, Hugging Face, OpenRouter",
-      description:"ClauseIQ is a personal document intelligence project for asking natural-language questions over uploaded documents. It uses a retrieval-based approach to find relevant information in the documents and answer questions.",
+      description:
+        "ClauseIQ is a personal document intelligence project for asking natural-language questions over uploaded documents. It uses a retrieval-based approach to find relevant information in the documents and answer questions.",
       link: "https://github.com/Ankit-euphemism/ClauseIQ",
     },
     {
@@ -104,11 +105,18 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/CheckInly",
     },
     {
-      title: "VidFind",
-      tech: "Flask, Regex",
+      title: "StudentPulse",
+      tech: "Flask, MongoDB, Gunicorn",
       description:
-        " Developed a web application to filter and search GPUs based on title and price range",
-      link: "https://github.com/Ankit-euphemism/VidFind",
+        "StudentPulse is a Flask web application for managing student records with MongoDB. It supports listing, searching, adding, viewing, editing, deleting, and exporting student data through a small JSON API.",
+      link: "https://github.com/Ankit-euphemism/StudentPulse",
+    },
+    {
+      title: "GPUScout",
+      tech: "Flask, Regex, Gunicorn",
+      description:
+        "GPUScout is a lightweight Flask web app for browsing budget graphics cards under a fixed price ceiling. It combines fast keyword search, a live max-price slider, and a simple JSON-backed data flow to help users compare GPU listings quickly.",
+      link: "https://github.com/Ankit-euphemism/GPUScout",
     },
     {
       title: "Sign Language Translator",
