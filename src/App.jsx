@@ -175,7 +175,7 @@ const portfolioData = {
     "Java Programming Intern at CodSoft",
   ],
   skills: {
-    Languages: ["Java", "Python", "C/C++", "JavaScript", "SQL", "NOSQL", "PHP"],
+    Languages: ["Java", "Python", "C/C++", "JavaScript","HTML","CSS", "SQL", "NOSQL", "PHP",],
     Frameworks: [
       "React.js",
       "Node.js",
