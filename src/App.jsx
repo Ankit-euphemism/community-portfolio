@@ -70,25 +70,25 @@ const portfolioData = {
       link: "https://github.com/Ankit-euphemism/SchoolDekho",
     },
     {
-      title: "CLauseIQ",
+      title: "Retriq",
       tech: "FastAPI, Hugging Face, OpenRouter",
       description:
-        "ClauseIQ is a personal document intelligence project for asking natural-language questions over uploaded documents. It uses a retrieval-based approach to find relevant information in the documents and answer questions.",
-      link: "https://github.com/Ankit-euphemism/ClauseIQ",
+        "Retriq is a personal document question-answering application. Upload a PDF or DOCX file, ask one or more questions in plain language, and receive concise answers based on the most relevant parts of that document.",
+      link: "https://github.com/Ankit-euphemism/Retriq.git",
     },
     {
       title: "taskstag",
       tech: "MERN STACK, MySQL",
       description:
         " Built a full-stack task management application using React, Node.js, Express, and MySQL",
-      link: "https://github.com/Ankit-euphemism/Simple-Task-Manager",
+      link: "https://github.com/Ankit-euphemism/taskstag",
     },
     {
       title: "Gale Gallery",
       tech: "React.js, API Integration",
       description:
         "Built a responsive React application fetching real-time weather data using OpenWeather API",
-      link: "https://github.com/Ankit-euphemism/weather_app",
+      link: "https://github.com/Ankit-euphemism/Gale-Gallery",
     },
     {
       title: "MailClear",
@@ -125,13 +125,6 @@ const portfolioData = {
         "Built a real-time gesture recognition system using TensorFlow, MediaPipe, and OpenCV",
       link: "https://github.com/Ankit-euphemism/sign-language-translator",
     },
-    // {
-    //   title: "Retrieval AI Model",
-    //   tech: "Python, Hugging Face, Pinecone DB, FastAPI",
-    //   description:
-    //     "LLM-Based Documents Query Retrieval to generate JSON summary of the documents ",
-    //   link: "https://github.com/Ankit-euphemism/Retrival_model.git",
-    // },
     {
       title: "Plinth- Campus ChatRoom",
       tech: "PHP, MySQL, HTML, CSS, JavaScript, jQuery",
@@ -146,26 +139,38 @@ const portfolioData = {
         "Dragon Repeller is a mini text-based adventure where you train your character and prepare for a final dragon battle.",
       link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller.git",
     },
+    // {
+    //   title: "SPSS-stream",
+    //   tech: "Data Science,IBM SPSS Modeler",
+    //   description:
+    //     "Developed a spss model to perform RFM Analysis on customer's data",
+    //   link: "https://github.com/DS-techies/SPSS-stream",
+    // },
     {
-      title: "SPSS-stream",
-      tech: "Data Science,IBM SPSS Modeler",
-      description:
-        "Developed a spss model to perform RFM Analysis on customer's data",
-      link: "https://github.com/DS-techies/SPSS-stream",
+      title: "PayScaleIQ",
+      tech: "NumPy, Pandas, Scikit-learn, Xgboost, Streamlit",
+      description:"PayScaleIQ aims to predict employee salaries based on various features such as age, education, experience, and job-related attributes.",
+      link: "https://github.com/Ankit-euphemism/PayScaleIQ"
     },
+    {
+      title: "CarValue Pro",
+      tech: "NumPy, Pandas, Scikit-learn, Xgboost, Streamlit",
+      description:"CarValue Pro aims to predict car values based on various features such as  ex-showroom price, purchase year,transmission type, fuel type, seller type, number of kilometers driven and number of owners.",
+      link: "https://github.com/Ankit-euphemism/CarValue-Pro"
+    }
   ],
   certificates: [
     "Data Concepts",
     "Web Dev Basics",
     "Data Analysis",
     "be10x",
-    "CodeAlpha",
-    "CodSoft",
-    "Web Designing - NILET",
+    "Web Designing Course at NILET",
     "AWS APAC Job Simulation",
     " 5-Day AI Agents Course by Kaggle and Google",
     " Deloitte data analysis job simulation",
     "Software Engineer Intern at Yuga Yatra",
+    "Java Programming Intern at Code Alpha",
+    "Java Programming Intern at CodSoft",
   ],
   skills: {
     Languages: ["Java", "Python", "C/C++", "JavaScript", "SQL", "NOSQL", "PHP"],
