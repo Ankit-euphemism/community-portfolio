@@ -149,15 +149,17 @@ const portfolioData = {
     {
       title: "PayScaleIQ",
       tech: "NumPy, Pandas, Scikit-learn, Xgboost, Streamlit",
-      description:"PayScaleIQ aims to predict employee salaries based on various features such as age, education, experience, and job-related attributes.",
-      link: "https://github.com/Ankit-euphemism/PayScaleIQ"
+      description:
+        "PayScaleIQ aims to predict employee salaries based on various features such as age, education, experience, and job-related attributes.",
+      link: "https://github.com/Ankit-euphemism/PayScaleIQ",
     },
     {
       title: "CarValue Pro",
       tech: "NumPy, Pandas, Scikit-learn, Xgboost, Streamlit",
-      description:"CarValue Pro aims to predict car values based on various features such as  ex-showroom price, purchase year,transmission type, fuel type, seller type, number of kilometers driven and number of owners.",
-      link: "https://github.com/Ankit-euphemism/CarValue-Pro"
-    }
+      description:
+        "CarValue Pro aims to predict car values based on various features such as  ex-showroom price, purchase year,transmission type, fuel type, seller type, number of kilometers driven and number of owners.",
+      link: "https://github.com/Ankit-euphemism/CarValue-Pro",
+    },
   ],
   certificates: [
     "Data Concepts",
@@ -182,6 +184,7 @@ const portfolioData = {
       "Flask",
       "REST APIs",
       "FastAPI",
+      "streamlit",
     ],
     Databases: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
     DeveloperTools: [
@@ -205,6 +208,7 @@ const portfolioData = {
       "OpenCV",
       "Uvicorn",
       "Pydantic",
+      "xgboost",
     ],
     Others: [
       "Problem Solving",
