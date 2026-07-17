@@ -133,7 +133,14 @@ export const portfolioData = {
       tech: "HTML, CSS, JavaScript",
       description:
         "Dragon Repeller is a mini text-based adventure where you train your character and prepare for a final dragon battle.",
-      link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller.git",
+      link: "https://github.com/Ankit-euphemism/RPG--Dragon-Repeller",
+    },
+    {
+      title: "DSA Tracker",
+      tech: "React.js, Local Storage",
+      description:
+        "A focused, browser-based tracker for a 12-week Java data structures and algorithms (DSA) placement-preparation plan.",
+      link: "https://github.com/Ankit-euphemism/Dsa_tracker",
     },
     {
       title: "PayScaleIQ",
