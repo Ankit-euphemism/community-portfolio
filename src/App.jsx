@@ -190,7 +190,7 @@ const portfolioData = {
       "Flask",
       "REST APIs",
       "FastAPI",
-      "streamlit",
+      "Streamlit",
     ],
     Databases: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
     DeveloperTools: [
