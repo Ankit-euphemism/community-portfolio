@@ -26,6 +26,9 @@ const contactSchema = yup.object({
 
 const SUBMISSION_TIMEOUT_MS = 10000;
 
+const inputClasses =
+  "w-full rounded-md border border-border bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-subtle-foreground outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20";
+
 export default function ContactForm() {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -135,10 +138,8 @@ export default function ContactForm() {
           message: "",
         });
         formElement.reset();
-        // console.log("Form submission successful:", data);
       } else {
         setResult("Unable to submit right now. Please try again shortly.");
-        // console.log(data.error);
       }
     } catch (error) {
       if (error.name === "AbortError") {
@@ -178,30 +179,28 @@ export default function ContactForm() {
     !result.startsWith("Thanks!");
 
   return (
-    <section className="relative overflow-hidden rounded-lg xs:rounded-2xl sm:rounded-3xl border border-gray-700/80 bg-gray-900/85 p-4 xs:p-6 sm:p-8 lg:p-10 2xl:p-12 shadow-2xl backdrop-blur-xl">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
-      <div className="absolute -right-24 xs:-right-16 top-[-6rem] sm:top-[-8rem] h-48 w-48 xs:h-64 xs:w-64 rounded-full bg-cyan-500/10 blur-3xl" />
-      <div className="absolute -left-20 xs:-left-12 bottom-[-5rem] sm:bottom-[-8rem] h-40 w-40 xs:h-56 xs:w-56 rounded-full bg-slate-500/10 blur-3xl" />
-
-      <div className="relative mb-6 xs:mb-8 sm:mb-10 space-y-3 xs:space-y-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 xs:px-4 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-300 mx-auto">
-          Contact
-        </div>
-        <div className="space-y-2 xs:space-y-3">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Let&apos;s build something useful
-          </h2>
-          <p className="mx-auto max-w-2xl text-xs xs:text-sm sm:text-base leading-relaxed text-gray-300">
-            Open to internships, freelance projects, and full-time opportunities.
-            Share a short brief and I&apos;ll respond with the next step.
-          </p>
-        </div>
+    <div className="rounded-xl border border-border bg-card p-6 sm:p-8 lg:p-10">
+      <div className="mb-8 flex flex-col gap-3">
+        <p className="font-mono text-xs sm:text-sm text-accent tracking-widest uppercase">
+          <span className="text-subtle-foreground">06</span>
+          {" — Contact"}
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground text-balance">
+          {"Let's build something useful"}
+        </h2>
+        <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground text-pretty">
+          Open to internships, freelance projects, and full-time opportunities.
+          {" Share a short brief and I'll respond with the next step."}
+        </p>
       </div>
 
-      <form onSubmit={onSubmit} className="relative space-y-4 xs:space-y-5 sm:space-y-6">
-        <div className="grid gap-4 xs:gap-5 sm:gap-6 sm:grid-cols-2">
-          <div className="space-y-1.5 xs:space-y-2">
-            <label htmlFor="name" className="text-xs xs:text-sm font-medium text-gray-200 block">
+      <form onSubmit={onSubmit} className="flex flex-col gap-5">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="name"
+              className="text-sm font-medium text-foreground"
+            >
               Full Name
             </label>
             <input
@@ -213,15 +212,17 @@ export default function ContactForm() {
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-full rounded-lg xs:rounded-xl border border-gray-700 bg-gray-950/80 px-3 xs:px-4 py-2.5 xs:py-3 text-xs xs:text-sm text-gray-100 placeholder:text-gray-500 outline-none transition duration-200 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/20"
+              className={inputClasses}
             />
-            {errors.name ? <p className="text-xs text-rose-400">{errors.name}</p> : null}
+            {errors.name ? (
+              <p className="text-xs text-destructive">{errors.name}</p>
+            ) : null}
           </div>
 
-          <div className="space-y-1.5 xs:space-y-2">
+          <div className="flex flex-col gap-2">
             <label
               htmlFor="email"
-              className="text-xs xs:text-sm font-medium text-gray-200 block"
+              className="text-sm font-medium text-foreground"
             >
               Work Email
             </label>
@@ -234,16 +235,18 @@ export default function ContactForm() {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-full rounded-lg xs:rounded-xl border border-gray-700 bg-gray-950/80 px-3 xs:px-4 py-2.5 xs:py-3 text-xs xs:text-sm text-gray-100 placeholder:text-gray-500 outline-none transition duration-200 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/20"
+              className={inputClasses}
             />
-            {errors.email ? <p className="text-xs text-rose-400">{errors.email}</p> : null}
+            {errors.email ? (
+              <p className="text-xs text-destructive">{errors.email}</p>
+            ) : null}
           </div>
         </div>
 
-        <div className="space-y-1.5 xs:space-y-2">
+        <div className="flex flex-col gap-2">
           <label
             htmlFor="subject"
-            className="text-xs xs:text-sm font-medium text-gray-200 block"
+            className="text-sm font-medium text-foreground"
           >
             Subject
           </label>
@@ -255,15 +258,17 @@ export default function ContactForm() {
             value={values.subject}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="w-full rounded-lg xs:rounded-xl border border-gray-700 bg-gray-950/80 px-3 xs:px-4 py-2.5 xs:py-3 text-xs xs:text-sm text-gray-100 placeholder:text-gray-500 outline-none transition duration-200 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/20"
+            className={inputClasses}
           />
-          {errors.subject ? <p className="text-xs text-rose-400">{errors.subject}</p> : null}
+          {errors.subject ? (
+            <p className="text-xs text-destructive">{errors.subject}</p>
+          ) : null}
         </div>
 
-        <div className="space-y-1.5 xs:space-y-2">
+        <div className="flex flex-col gap-2">
           <label
             htmlFor="message"
-            className="text-xs xs:text-sm font-medium text-gray-200 block"
+            className="text-sm font-medium text-foreground"
           >
             Message
           </label>
@@ -276,29 +281,31 @@ export default function ContactForm() {
             value={values.message}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="w-full resize-y rounded-lg xs:rounded-xl border border-gray-700 bg-gray-950/80 px-3 xs:px-4 py-2.5 xs:py-3 text-xs xs:text-sm text-gray-100 placeholder:text-gray-500 outline-none transition duration-200 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/20"
+            className={`${inputClasses} resize-y`}
           />
-          {errors.message ? <p className="text-xs text-rose-400">{errors.message}</p> : null}
+          {errors.message ? (
+            <p className="text-xs text-destructive">{errors.message}</p>
+          ) : null}
         </div>
 
-        <div className="flex flex-col xs:flex-row gap-3 xs:gap-4 border-t border-gray-800 pt-4 xs:pt-5 sm:pt-6 sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center justify-center rounded-lg xs:rounded-xl bg-cyan-400 px-4 xs:px-6 py-2.5 xs:py-3 text-xs xs:text-sm font-semibold text-gray-950 transition duration-200 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:bg-cyan-400/50 disabled:text-gray-800 active:scale-95 touch-manipulation"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-6 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
 
           <span
-            className={`text-xs xs:text-sm ${
+            className={`text-xs sm:text-sm ${
               result === "Sending..."
-                ? "text-gray-300"
+                ? "text-foreground"
                 : isSuccess
-                  ? "text-cyan-300"
+                  ? "text-accent"
                   : isError
-                    ? "text-rose-400"
-                    : "text-gray-400"
+                    ? "text-destructive"
+                    : "text-subtle-foreground"
             }`}
             aria-live="polite"
           >
@@ -306,6 +313,6 @@ export default function ContactForm() {
           </span>
         </div>
       </form>
-    </section>
+    </div>
   );
 }
