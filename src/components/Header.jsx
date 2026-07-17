@@ -51,7 +51,7 @@ export default function Header() {
             href="#home"
             className="font-mono text-sm sm:text-base font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
           >
-            <span className="text-accent">{"~/"}</span>ankit-kumar
+            <span className="text-accent">{"~/"}</span>Ankit kumar<span className="text-accent">{"/~"}</span>
           </a>
 
           <nav
