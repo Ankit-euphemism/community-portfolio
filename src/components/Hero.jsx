@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         <div className="flex w-full flex-col items-center gap-6 text-center lg:items-start lg:text-left">
           <p className="font-mono text-xs sm:text-sm text-accent tracking-widest uppercase">
-            {"> BTech CSE Student · Building for the web"}
+            {"> BTech CSE Student · Building for Future"}
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground text-balance">
@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
 
           <p className="max-w-xl text-sm sm:text-base leading-relaxed text-muted-foreground text-pretty">
-            Building scalable web applications and solving real-world problems
+            Building scalable applications and solving real-world problems
             with modern tech. Currently exploring full-stack development, AI
             and machine learning.
           </p>
