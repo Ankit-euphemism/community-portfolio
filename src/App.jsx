@@ -142,8 +142,9 @@ const portfolioData = {
     {
       title: "DSA Tracker",
       tech: "React.js, LocalStorage",
-      description:"A focused, browser-based tracker for a 12-week Java data structures and algorithms (DSA) placement-preparation plan.",
-      link: "https://github.com/Ankit-euphemism/Dsa_tracker"
+      description:
+        "A focused, browser-based tracker for a 12-week Java data structures and algorithms (DSA) placement-preparation plan.",
+      link: "https://github.com/Ankit-euphemism/Dsa_tracker",
     },
     // {
     //   title: "SPSS-stream",
@@ -181,7 +182,17 @@ const portfolioData = {
     "Java Programming Intern at CodSoft",
   ],
   skills: {
-    Languages: ["Java", "Python", "C/C++", "JavaScript","HTML","CSS", "SQL", "NOSQL", "PHP",],
+    Languages: [
+      "Java",
+      "Python",
+      "C/C++",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SQL",
+      "NOSQL",
+      "PHP",
+    ],
     Frameworks: [
       "React.js",
       "Node.js",
@@ -243,6 +254,22 @@ const MailIcon = ({ className }) => (
   >
     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+  </svg>
+);
+const PhoneIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.62 2.65a2 2 0 0 1-.45 2.11L8.01 9.75a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.86.29 1.75.5 2.65.62A2 2 0 0 1 22 16.92z"></path>
   </svg>
 );
 const GithubIcon = ({ className }) => (
@@ -494,6 +521,13 @@ export default function App() {
                 title="Email"
               >
                 <MailIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
+              </a>
+              <a
+                href={`tel:${portfolioData.contact.phone}`}
+                className="p-2.5 xs:p-3 sm:p-3 rounded-full min-h-10 min-w-10 xs:min-h-11 xs:min-w-11 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300 hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-cyan-500/30 active:scale-95"
+                title="Phone"
+              >
+                <PhoneIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-4">
@@ -778,7 +812,8 @@ export default function App() {
               href={`tel:${portfolioData.contact.phone}`}
               className="flex items-center gap-2 px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg hover:border-cyan-400/50 text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold text-2xs xs:text-xs sm:text-sm active:scale-95 min-h-10 xs:min-h-11"
             >
-              📱 {portfolioData.contact.phone}
+              <PhoneIcon className="h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6" />
+              {portfolioData.contact.phone}
             </a>
           </div>
           <div className="flex justify-center gap-2 xs:gap-3 sm:gap-4 mb-4 xs:mb-5 sm:mb-6">
