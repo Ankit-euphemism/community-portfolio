@@ -1,5 +1,5 @@
 import { portfolioData } from "../data/portfolio";
-import { GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, MailIcon, MapPinIcon,PhoneIcon } from "./icons";
 
 const roles = [
   "Software Engineer",
@@ -87,6 +87,14 @@ export default function Hero() {
               >
                 <MailIcon className="h-5 w-5" />
                 <span className="sr-only">Email</span>
+              </a>
+              <a
+                href={`tel:${portfolioData.contact.phone}`}
+                title="Phone"
+                className="flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-card hover:text-accent"
+              >
+                <PhoneIcon className="h-5 w-5" />
+                <span className="sr-only">Phone</span>
               </a>
             </div>
           </div>
