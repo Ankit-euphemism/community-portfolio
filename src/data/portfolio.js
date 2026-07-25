@@ -19,7 +19,7 @@ export const portfolioData = {
       duration: "Aug 2023 - June 2027",
     },
     {
-      degree: "Schooling (Till Class-12th)",
+      degree: "10th(High School) & 12th (Intermediate) - Science",
       institution: "Modern Academy Inter College",
       location: "Lucknow, UP, India",
       duration: "Apr 2008 - Mar 2023",
