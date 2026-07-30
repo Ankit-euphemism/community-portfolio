@@ -1,18 +1,44 @@
 @import "tailwindcss";
 
-/* Ultra-small device support (2xs breakpoint) */
-@layer components {
-  @media (max-width: 374px) {
-    .text-2xs {
-      @apply text-xs;
-    }
-    .px-2xs {
-      @apply px-1;
-    }
-    .py-2xs {
-      @apply py-0.5;
-    }
-  }
+@theme {
+  /* Color system: 1 accent + neutrals */
+  --color-background: #0a0a0b;
+  --color-foreground: #ededf0;
+  --color-card: #121215;
+  --color-card-hover: #17171b;
+  --color-border: #232329;
+  --color-border-strong: #33333b;
+  --color-muted-foreground: #9b9ba4;
+  --color-subtle-foreground: #6f6f78;
+  --color-accent: #22d3ee;
+  --color-accent-muted: rgba(34, 211, 238, 0.12);
+  --color-accent-foreground: #06282e;
+  --color-destructive: #fb7185;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius: 0.625rem;
+}
+
+html {
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
 }
 
 /* Safe area support for notched devices */
@@ -29,21 +55,6 @@
   .safe-bottom {
     padding-bottom: max(0px, env(safe-area-inset-bottom));
   }
-
-  .safe-left {
-    padding-left: max(0px, env(safe-area-inset-left));
-  }
-
-  .safe-right {
-    padding-right: max(0px, env(safe-area-inset-right));
-  }
-}
-
-/* Smooth scrolling support */
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Touch-friendly interactions */
@@ -55,27 +66,11 @@ html {
   }
 }
 
-/* Landscape orientation optimization */
-@media (max-height: 500px) and (orientation: landscape) {
-  header {
-    padding: 8px 0 !important;
-  }
-
-  main {
-    padding-top: 60px !important;
-  }
-
-  section {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-}
-
-/* High DPI support */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  body {
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
+/* Prevent zoom on input focus for iOS */
+input,
+textarea,
+select {
+  font-size: 1rem;
 }
 
 /* Reduced motion support */
@@ -86,62 +81,4 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Touch-friendly link colors */
-@media (hover: none) {
-  a:active {
-    opacity: 0.7;
-  }
-}
-
-/* Prevent zoom on input focus for iOS */
-input,
-textarea,
-select {
-  font-size: 16px;
-  font-size: 1rem;
-}
-
-/* Support for various device sizes */
-@media (max-width: 374px) {
-  /* Extra small phones */
-  html {
-    /* slightly larger base for very small phones to improve readability */
-    font-size: 17px;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 639px) {
-  /* small phones / large phones */
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-  /* tablets and small laptops */
-  html {
-    font-size: 19px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1535px) {
-  /* desktop */
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1536px) {
-  /* Large desktops */
-  html {
-    font-size: 17px;
-  }
-}
-
-/* Safe viewport adjustment */
-@viewport {
-  width: device-width;
-  zoom: 1;
 }
