@@ -154,10 +154,10 @@ export const portfolioData = {
       tech: "NumPy, Pandas, Scikit-learn, Xgboost, Streamlit",
       description:
         "CarValue Pro aims to predict car values based on various features such as ex-showroom price, purchase year, transmission type, fuel type, seller type, number of kilometers driven and number of owners.",
-      link: "https://github.com/Ankit-euphemism/CarValue-Pro",
+      link: "https://github.com/Ankit-euphemism/CarValue_pro",
     },
     {
-      title: "StressLess",
+      title: "StressLens",
       tech: "NumPy, Pandas, Scikit-learn, Streamlit",
       description:
         "StressLens is a web application designed to visualize and analyze stress-related data. It provides a user-friendly dashboard for monitoring stress metrics, generating insights, and exploring trends in user-defined datasets.",
