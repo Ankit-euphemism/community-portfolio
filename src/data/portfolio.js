@@ -1,7 +1,7 @@
 // --- Data extracted from the resume ---
 export const portfolioData = {
   name: "Ankit Kumar",
-  imageUrl: "/ank_pic.jpg",
+  imageUrl: "/ank_pic.jpeg",
   contact: {
     email: "ak8622564@gmail.com",
     phone: "+91-9695284445",
